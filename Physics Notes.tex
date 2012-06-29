@@ -414,11 +414,22 @@ Space-time diagrams with $x$ and $ct$ axes. Some properties are:
 %%%%%%%%%%%%%%%%%
 \subsubsection*{Momentum}
 %%%%%%%%%%%%%%%%%
+	\begin{align*}
+	\ve{p}=\gamma_vm\ve{v}=\frac{m\ve{v}}{\sqrt{1-\frac{v^2}{c^2}}}
+	\end{align*}
 \subsubsection*{Energy}
 %%%%%%%%%%%%%%%%%
-\subsubsection*{Force}
-%%%%%%%%%%%%%%%%%
-
+	\begin{align*}
+	E^2=p^2c^2+m^2c^4
+	\end{align*}
+For massive particles:
+	\begin{align*}
+	E&=\gamma mc^2=\frac{mc^2}{\sqrt{1-\frac{v^2}{c^2}}}
+	\end{align*}
+For massless particles(such as photons):
+	\begin{align*}
+	E=pc=\frac{hc}{\lambda}
+	\end{align*}
 \subsection{4-vectors}
 %%%%%%%%%%%%%%%%%
 A 4-vector $\fve{A}=(A_1,A_2,A_3,A_4)$ is a quantity that transforms as follows:
@@ -435,6 +446,7 @@ The dot product of two 4-vectors is invariant under Lorentz transformations:
 \subsubsection*{Different types of 4-vectors}
 %%%%%%%%%%%%%%%%%
 \begin{description}
+\setlength{\itemsep}{-2mm}
 \item[4-position] $(dx, dy, dz, icdt)$
 
 4-vectors originate from the invariant interval $ds$.
@@ -442,18 +454,42 @@ The dot product of two 4-vectors is invariant under Lorentz transformations:
 	\fve{ds}^2&=(dx, dy, dz, icdt)^2 \\
 	&=dx^2+dy^2+dz^2-c^2dt^2
 	\end{align*}
-\item[4-velocity] $(\ve{v},ic)$
+\item[4-velocity] $\gamma_v(\ve{v},ic)$
 
 To obtain other 4-vectors, we can multiply invariant quantities to the 4-position vector, such as proper time:
 	\begin{align*}
 	d\tau&=\frac{dt}{\gamma}\\
 	\fve{v}&=\frac{ds}{d\tau}\\
-	&=\gamma_v(\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt},ic)\\
-	&=(\ve{v},ic)
+	&=\gamma_v\left(\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt},ic\right)\\
+	&=\gamma_v(\ve{v},ic)
 	\end{align*}
-\item[4-acceleration]
-\item[4-force]
-\item[4-momentum] $(\ve{p},\frac{iE}{c})$
+\item[4-momentum] $\left(\ve{p},i\frac{E}{c}\right)$
+
+As mass is invariant, 
+	\begin{align*}
+	\fve{p}&=m\fve{v}\\
+	&=(\gamma_vm\ve{v},i\gamma_vmc)\\
+	&=\left(\ve{p},i\frac{E}{c}\right)
+	\end{align*}
+For photons in x-direction, the 4-momentum vector is:
+	\begin{align*}
+	\fve{p}=\left(\frac{h}{\lambda},0,0,i\frac{h}{\lambda}\right)
+	\end{align*}
+\item[4-wave] $\left(\ve{k},i\frac{\omega}{c}\right)$
+
+For electromagnetic waves,
+	\begin{align*}
+	k&=\frac{2\pi}{\lambda}=\frac{\omega}{c}\\
+	\ve{p}&=\frac{h}{\lambda}=\hbar\ve{k}\\
+	E&=hf=\hbar\omega\\
+	\fve{p}&=\hbar\left(\ve{k},i\frac{\omega}{c}\right)\\
+	\fve{k}&=\frac{\fve{p}}{\hbar}
+	\end{align*}
+\item[4-force] $\gamma_v\left(\ve{f},\frac{i}{c}\frac{dE}{dt}\right)$
+	\begin{align*}
+	\fve{F}&=\frac{d\fve{p}}{d\tau}\\
+	&=\gamma_v\left(\ve{f},\frac{d}{dt}\left(i\frac{E}{c}\right)\right)
+	\end{align*}
 \end{description}
 
 \section{Optics}
@@ -484,7 +520,7 @@ For thin lenses and mirrors:
 	\end{align*}
 For composite thin lenses:
 	\begin{align*}
-	\frac{1}{f} = (n-1)(\frac{1}{R_1} + \frac{1}{R_2})
+	\frac{1}{f} = (n-1)\left(\frac{1}{R_1} + \frac{1}{R_2}\right)
 	\end{align*}
 Lens formed by interface of two materials with different $n$:
 	\begin{align*}
