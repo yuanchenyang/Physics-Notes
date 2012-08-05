@@ -1,10 +1,14 @@
 \documentclass[11pt]{article}
 
-\usepackage{graphicx}
 \usepackage{amssymb}
-\usepackage{multicol}
+\usepackage{siunitx}
 \usepackage{amsmath}
+\usepackage{bm}
+
+\usepackage{multicol}
 \usepackage{savetrees}
+\usepackage{hyperref}
+
 
 \makeatletter
 \renewcommand\tableofcontents{%
@@ -14,16 +18,18 @@
 
 \newcommand{\Lagr}{\mathcal{L}}					%Lagrangian
 \newcommand{\Hami}{\mathcal{H}}					%Hamiltonian
+\newcommand{\emf}{\mathcal{E}}					%EMF symbol
 
 \newcommand{\Imp}{\mathcal{I}}					%Impulse
 
-\newcommand{\degree}{\ensuremath{^\circ}}			%Degree Celcius
-
-\newcommand{\ve}[1]{\ensuremath{\boldsymbol{#1}}}	%Vector
+\newcommand{\ve}[1]{\ensuremath{\bm{#1}}}			%Vector
 \newcommand{\fve}[1]{\ensuremath{\vec{#1}}}			%Four-vector
+\newcommand{\dr}{\ensuremath{\text{r}}}				%Displacement r 
+\newcommand{\dvr}{\ensuremath{\textbf{r}}}			%Displacement vector r 
+\newcommand{\dvrhat}{\ensuremath{\ve{\hat{\dvr}}}}	%Displacement unit vector r 
 
-\title{Physics Olympiad Notes}
-\author{Yuan Chen Yang\\NUS High School}
+\title{Physics Notes}
+\author{Yuan Chenyang}
 
 \begin{document}
 
@@ -36,13 +42,13 @@
 
 \begin{multicols*}{3}
 %%%%%%%%%%%%%%%%%
-\section{Measurement and Uncertainty}
+\section{Measurement}
 %%%%%%%%%%%%%%%%%
-\subsection{Uncertainty in Instruments}
+\subsection{Instrument Uncertainty}
 All instruments have uncertainty:
 \begin{enumerate}
-\item Analogue Instruments: Uncertainty is half the the smallest measurement unit
-\item Digital Instruments: Uncertainty is the smallest significant figure
+\item Analogue Instruments: Half the smallest measurement unit
+\item Digital Instruments: The smallest significant figure
 \item Human reaction time: $\pm 0.10$s
 \end{enumerate}
 %%%%%%%%%%%%%%%%%
@@ -285,7 +291,9 @@ The centripetal acceleration $a$ and the force required to keep the object in it
 	a&=\frac{v^2}{r}=\omega^2r\\
 	F&=\frac{mv^2}{r}=m\omega^2r
 	\end{align*}
-\subsection{Rotational Dynamics (Constant $\ve{\hat{L}}$)}
+\subsection{\texorpdfstring{Rotational Dynamics (Constant $\ve{\hat{L}}$)}{Rotational Dynamics (Constant Direction of L)}} %Prevents \hyperref error
+%%%%%%%%%%%%%%%%%
+\subsubsection{Angular Momentum}
 %%%%%%%%%%%%%%%%%
 The angular momentum of a point mass is defined as:
 	\begin{align*}
@@ -363,7 +371,16 @@ Center of mass for an object of mass $M$:
 	\begin{align*}
 	\ve{R_\text{CM}}=\frac{\int\ve{r}dm}{M}
 	\end{align*}
-	
+Common moments of inertia (taken about center of mass unless stated):
+\begin{enumerate}
+\setlength{\itemsep}{2mm}
+\item Point mass at $r$ from axis: $mr^2$
+\item Rod of length $L$: $\frac{1}{3}mL^2$
+\item Rod of length $L$ about one end: $\frac{1}{12}mL^2$
+\item Solid disk of radius $r$ perpendicular to axis: $\frac{1}{2}mr^2$
+\item Hollow sphere with radius $r$: $\frac{2}{3}mr^2$
+\item Solid sphere with radius $r$: $\frac{2}{5}mr^2$
+\end{enumerate}
 \section{Special Relativity}
 %%%%%%%%%%%%%%%%%
 \subsection{Postulates}
@@ -421,7 +438,7 @@ Where $f'$ is the frequency observed of a moving source emitting at frequency $f
 %%%%%%%%%%%%%%%%%
 Space-time diagrams with $x$ and $ct$ axes. Some properties are:
 \begin{enumerate}
-\item Light travels at $45\degree$ to horizontal.
+\item Light travels at $\ang{45}$ to horizontal.
 \item $x'$ and $ct'$ axes of another moving frame are $\theta$ to the $x$ and $ct$ axes respectively, with
 	\begin{align*}
 	\tan(\theta)=\beta
@@ -513,17 +530,198 @@ For electromagnetic waves,
 	\end{align*}
 \end{description}
 
+\section{Electricity and Magnetism}
+%%%%%%%%%%%%%%%%%
+\subsection{Electrostatics}
+%%%%%%%%%%%%%%%%%
+\begin{description}
+\item[Coulomb's law] The force between a point charge $q$ and test charge $Q$:
+	\begin{align*}
+	\ve{F} =\frac{1}{4\pi\epsilon_0}\frac{Qq}{\dr^2}\dvrhat
+	\end{align*}
+Where $\dvr=\ve{r}-\ve{r'}$ is the displacement vector from $Q$ at $\ve{r}$ and $q$ at $\ve{r'}$.
+\item[Superposition principle] The interaction between any two charges is unaffected by any other charges
+\end{description}
+
+\subsubsection{Electric Field}
+%%%%%%%%%%%%%%%%%
+The electric field of a point charge is defined as:
+	\begin{align*}
+	\ve{E}=\frac{\ve{F}}{Q}=\frac{1}{4\pi\epsilon_0}\frac{q}{\dr^2}\dvrhat
+	\end{align*}
+For a continuous volume charge distribution $\rho(\ve{r'})$, we can use the superposition principle to get:
+	\begin{align*}
+	\ve{E}(\ve{r})=\frac{1}{4\pi\epsilon_0}\int_\mathcal{V}\frac{\rho(\ve{r'})}{\dr^2}\dvrhat d\tau'
+	\end{align*}
+Taking the divergence of $\ve{E}$, we get Gauss' law:
+	\begin{align*}
+	\ve{\nabla}\cdot\ve{E}&=\frac{\rho{(\ve{r})}}{\epsilon_0}\\
+	\oint_\mathcal{S}\ve{E}\cdot d\ve{a}&=\frac{Q_\text{enc}}{\epsilon_0}
+	\end{align*}
+Taking the curl of $\ve{E}$:
+	\begin{align*}
+	\ve{\nabla}\times\ve{E}&=0\\
+	\oint\ve{E}\cdot d\ve{l}&=0
+	\end{align*}
+For any surface charge in an electric field $\ve{E}$, the field felt by an area element on the surface is:
+	\begin{align*}
+	\ve{E}_\text{felt}=\frac{1}{2}\left(\ve{E}_\text{above}+\ve{E}_\text{below}\right)
+	\end{align*}
+\subsubsection{Electric Potential}
+%%%%%%%%%%%%%%%%%
+As the line integral of the electrostatic field is path independent, we can define the potential at a point $\ve{r}$:
+	\begin{align*}
+	V(\ve{r})=-\int_{\mathcal{O}}^{\ve{r}}\ve{E}\cdot d\ve{l}
+	\end{align*}
+Where $\mathcal{O}$ is a standard reference point, usually set to infinity. The potential of a point charge can then be found, and with the superposition principle we can find the potential of any charge distribution:
+	\begin{align*}
+	V&=\frac{1}{4\pi\epsilon_0}\frac{q}{\dr}\\
+	V(\ve{r})&=\frac{1}{4\pi\epsilon_0}\int_\mathcal{V}\frac{\rho(\ve{r'})}{\dr} d\tau'
+	\end{align*}
+Taking the gradient of the potential:
+	\begin{align*}
+	\ve{E}&=-\nabla V\\
+	\nabla^2V&=-\frac{\rho}{\epsilon_0}
+	\end{align*}
+
+\subsubsection{Work and Energy}
+%%%%%%%%%%%%%%%%%
+The work needed to bring a charge $Q$ from infinity to a point $\ve{a}$ is:
+	\begin{align*}
+	W&=\int_{\infty}^{\ve{a}} \ve{F}\cdot d\ve{l}\\
+	&=-Q\int_{\infty}^{\ve{a}} \ve{E}\cdot d\ve{l}\\
+	&=QV(\ve{a})
+	\end{align*}
+The energy in a continuous charge distribution is:
+	\begin{align*}
+	W&=\frac{1}{2}\int \rho V d\tau\\
+	&=\frac{\epsilon}{2} \int E^2 d\tau
+	\end{align*}
+Where the integral is taken over all space.
+\subsubsection{Conductors}
+%%%%%%%%%%%%%%%%%
+A perfect conductor has an unlimited supply of free charges. 
+\begin{enumerate}
+\item $\ve{E}=0$ and $\rho = 0$ inside a conductor
+\item Any conductor is an equipotential
+\item Just outside a conductor, $\ve{E}$ is perpendicular to the surface.
+\end{enumerate}
+If we charge up two conductors with $+Q$ and $-Q$, the potential between them is proportional to the charge $Q$ (because the electric field is proportional to $Q$), and we define the constant of proportionality capacitance:
+	\begin{align*}
+	C=\frac{Q}{V}
+	\end{align*}
+The work done by charging a capacitor is:
+	\begin{align*}
+	W=\int_0^Q \frac{q}{C} dq &= \frac{Q^2}{2C}\\
+	&=\frac{1}{2}CV^2
+	\end{align*}
+\subsubsection{Image Charges}
+%%%%%%%%%%%%%%%%%
+In certain special cases, a charge placed next to a grounded conductor has equivalents.
+\begin{enumerate}
+\item A point charge and a conducting sheet: An opposite charge in the mirror image position.
+\item A point charge and a conducting sphere, or an infinite line charge and conducting cylinder: Opposite image charge and charge forms the Apollonius sphere/cylinder.
+\end{enumerate}
+\subsubsection{Uniqueness Theorems}
+%%%%%%%%%%%%%%%%%
+\begin{description}
+\item[First uniqueness theorem] The solution to Laplace's equation ($\nabla^2V=0$) in some volume $\mathcal{V}$ is uniquely determined if $V$ is specified on the boundary surface $\mathcal{S}$. 
+\item[Second uniqueness theorem] In a volume $\mathcal{V}$ surrounded by conductors and containing a specified charge density $\rho$, the electric field is uniquely determined if the total charge on each conductor is given. 
+\end{description}
+\subsection{Magnetostatics}
+%%%%%%%%%%%%%%%%%
+\subsubsection{Lorentz Force Law}
+%%%%%%%%%%%%%%%%%
+The force felt by:
+\begin{enumerate}
+\item A point charge $q$ moving at velocity $\ve{v}$ through a magnetic field $\ve{B}$:
+	\begin{align*}
+	\ve{F}=q\ve{v}\times\ve{B}
+	\end{align*}
+\item A line current $\ve{I}$:
+	\begin{align*}
+	\ve{F}=I\int(d\ve{l}\times\ve{B})
+	\end{align*}
+\item A general volume current $\ve{J}$ per unit area perpendicular to flow:
+	\begin{align*}
+	\ve{F}=\int(\ve{J}\times\ve{B})d\tau
+	\end{align*}
+ \end{enumerate}
+\subsubsection{Biot-Savart Law}
+%%%%%%%%%%%%%%%%%
+The magnetic field created by a steady line current:
+	\begin{align*}
+	\ve{B}(\ve{r})= \frac{\mu_0}{4\pi}I\int\frac{d\ve{l}\times\dvrhat}{\dr^2}
+	\end{align*}
+\subsubsection{Magnetic Fields}
+%%%%%%%%%%%%%%%%%
+The magnetic field is divergence-free:
+	\begin{align*}
+	\ve{\nabla}\cdot\ve{B}&=0\\
+	\oint\ve{B}\cdot d\ve{a}&=0
+	\end{align*}
+Taking the curl of the magnetic field gives Ampere's Law:
+	\begin{align*}
+	\ve{\nabla}\times\ve{B}&=\mu_0\ve{J}\\
+	\oint\ve{B}\cdot d\ve{l}&=\mu_0 I_{\text{enc}}
+	\end{align*}
+\subsection{Electrodynamics}
+%%%%%%%%%%%%%%%%%
+\subsubsection{Electromotive Force}
+%%%%%%%%%%%%%%%%%
+For an electric field applied in a material:
+	\begin{align*}
+	\ve{J} = \frac{\ve{E}}{\rho}
+	\end{align*}
+Where $\rho$ is the resistivity constant depending on the material.
+This leads to Ohm's law:
+	\begin{align*}
+	V&=IR\\
+	R&=\rho\frac{l}{A}
+	\end{align*}
+The power delivered:
+	\begin{align*}
+	P=VI=I^2R
+	\end{align*}
+The electromotive force (emf) $\emf$ is the line integral of the force per unit charge driving the current:
+	\begin{align*}
+	\emf &=\oint \ve{E} \cdot d\ve{l}
+	\end{align*}
+$\emf=V$ for an ideal source.
+\subsubsection{Faraday's Law}
+%%%%%%%%%%%%%%%%%
+Faraday's law states that a changing magnetic flux $\Phi$ induces an electric field:
+	\begin{align*}
+	\emf =\oint \ve{E} \cdot d\ve{l} &= \frac{d\Phi}{dt}\\
+	\ve{\nabla}\times\ve{E}&=\frac{d\ve{B}}{dt}
+	\end{align*}
+\subsubsection{Inductance}
+%%%%%%%%%%%%%%%%%
+If we have two current loops 1 and 2, the flux $\Phi_2$ through loop 2 is proportional to the current through loop 1:
+	\begin{align*}
+	\Phi_2 = M_{21}I_1
+	\end{align*}
+Where $M_{21}=M_{12}$ is the mutual inductance between these two loops. We can also define an self inductance $L$, for a single loop:
+	\begin{align*}
+	\Phi &= LI\\
+	\emf &= -L\frac{dI}{dt}
+	\end{align*}
+\subsection{Electric Circuits}
+%%%%%%%%%%%%%%%%%
+
 \section{Oscillations and Waves}
 %%%%%%%%%%%%%%%%%
-Most questions involve solving linear differential equations. For such equations, linear combinations of solutions will also be a solution.
-\subsection{Simple Harmonic Motion}
+Many questions involve solving linear differential equations. For such equations, linear combinations of solutions will also be a solution.
+\subsection{Oscillations}
+%%%%%%%%%%%%%%%%%
+\subsubsection{Simple Harmonic Motion}
 %%%%%%%%%%%%%%%%%
 We have a spring force, $F=-kx$.
 	\begin{align*}
 	\ddot{x}+\omega^2x&=0 \text{, where }\omega=\sqrt{\frac{k}{m}}\\
 	x(t)&=A \cos(\omega t+\phi)
 	\end{align*}
-\subsection{Damped Harmonic Motion}
+\subsubsection{Damped Oscillators}
 %%%%%%%%%%%%%%%%%
 In addition to the spring force, we now have a drag force $F_f=-bv$, and the total force $F=-kx-b\dot{x}$.
 	\begin{align*}
@@ -557,7 +755,7 @@ In this special case, $x=te^{-\gamma t}$ is also a solution:
 	\end{align*}
 Systems with critical damping go to zero the quickest.
 \end{description}
-\subsection{Driven Harmonic Motion}
+\subsubsection{Driven Oscillators}
 %%%%%%%%%%%%%%%%%
 We have to solve differential equations of this form:
 	\begin{align*}
@@ -569,7 +767,7 @@ We first find particular solutions for each $n$, by guessing solutions of the fo
 	x_{p_n}(t)=\frac{C_n}{-{\omega_n}^2+2i\gamma\omega_n+a}e^{i\omega_nt}
 	\end{align*}
 Using the superposition principle, the final solution is a linear combination of the general solution and the particular solutions, with the combination constants determined by initial conditions.
-\subsection{Coupled Oscillators}
+\subsubsection{Coupled Oscillators}
 %%%%%%%%%%%%%%%%%
 Normal modes are states of a system where all parts are moving with the same frequency. General strategy to find normal modes:
 \begin{enumerate}
@@ -578,7 +776,7 @@ Normal modes are states of a system where all parts are moving with the same fre
 \item Non-trivial solutions exist if and only if the determinant of the matrix is zero. Solve for $\omega$, and subsequently find $A_i$
 \end{enumerate}
 The motion of the system can then be decomposed into linear combinations of its normal modes.
-\subsection{Small Oscillations}
+\subsubsection{Small Oscillations}
 %%%%%%%%%%%%%%%%%
 For an object at a local minimum of a potential well, we can expand $V(x)$ about the equilibrium point:
 	\begin{align*}
@@ -592,7 +790,18 @@ As $V(x_0)$ is an additive constant, and $V'(x_0)=0$ by definition of equilibriu
 	%m\ddot{x}+V''(x_0)x&=V''(x_0)x_0 \\
 	\omega&=\sqrt{\frac{V''(x_0)}{m}}
 	\end{align*}
-\subsection{Waves}
+\subsection{Wave Equation}
+%%%%%%%%%%%%%%%%%
+A wave is a disturbance of a continuous medium that propagates with a fixed shape at constant velocity. In one dimension:
+	\begin{align*}
+	f(z,t)=f(z-vt,0)=g(z-vt)
+	\end{align*}
+All such functions $f$ are the solutions to the wave equation:
+	\begin{align*}
+	\frac{\partial^2 f}{\partial x^2}=\frac{1}{v^2}\frac{\partial^2 f}{\partial t^2}
+	\end{align*}
+Where $v$ is the speed of propagation.
+\subsubsection{Electromagnetic Waves}
 %%%%%%%%%%%%%%%%%
 
 \section{Optics}
@@ -601,7 +810,7 @@ As $V(x_0)$ is an additive constant, and $V'(x_0)=0$ by definition of equilibriu
 %%%%%%%%%%%%%%%%%
 Results from Fermat's principle of least time:
 	\begin{align*}
-	\theta_{incidence}&=\theta_{reflection} \\
+	\theta_\text{incidence}&=\theta_\text{reflection} \\
 	n_1\sin{\theta_1}&=n_2 \sin{\theta_2}
 	\end{align*}
 Sign convention:
@@ -677,5 +886,12 @@ Double slit including effects of diffraction:
 	I = I_{\text{max}} &\cos^2\left(\frac{\pi d \sin{\theta}}{\lambda} \right) \\
 	&\cdot  \left [\frac{\sin(\pi a \sin \theta / \lambda)}{\pi a \sin \theta / \lambda} \right]^2
 	\end{align*}
+	
+\section{Thermodynamics}
+%%%%%%%%%%%%%%%%%
+
+\section{Quantum Theory}
+%%%%%%%%%%%%%%%%%
+
 \end{multicols*}
-\end{document}  
+\end{document}
