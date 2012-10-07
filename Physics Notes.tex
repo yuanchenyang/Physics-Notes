@@ -22,17 +22,22 @@
 }
 \makeatother
 
+											%-----------Symbols-----------
 \newcommand{\Lagr}{\mathcal{L}}					%Lagrangian
 \newcommand{\Hami}{\mathcal{H}}					%Hamiltonian
-\newcommand{\emf}{\mathcal{E}}					%EMF symbol
-
+\newcommand{\emf}{\mathcal{E}}					%EMF
 \newcommand{\Imp}{\mathcal{I}}					%Impulse
 
+											%-----------Functions-----------
 \newcommand{\ve}[1]{\ensuremath{\bm{#1}}}			%Vector
 \newcommand{\fve}[1]{\ensuremath{\vec{#1}}}			%Four-vector
 \newcommand{\dr}{\ensuremath{\text{r}}}				%Displacement r 
 \newcommand{\dvr}{\ensuremath{\textbf{r}}}			%Displacement vector r 
 \newcommand{\dvrhat}{\ensuremath{\ve{\hat{\dvr}}}}	%Displacement unit vector r 
+\newcommand{\cc}[1]{\ensuremath{#1^{\ast}}}			%Complex Conjugate
+\newcommand{\pd}[2]{
+\ensuremath{ \frac{\partial #1}{\partial #2} }}			% Partial Derivative
+
 
 \title{Physics Notes}
 \author{Yuan Chenyang}
@@ -71,7 +76,7 @@ All instruments have uncertainty:
 \subsection{Propagation of error}
 For any $f(a, \cdots)$ the general formula for $\Delta f$ is:
 	\begin{align*}
-	\Delta f = \sqrt{\left( \frac{\partial f}{\partial a} \Delta a \right)^2 + \cdots}
+	\Delta f = \sqrt{\left( \pd{f}{a} \Delta a \right)^2 + \cdots}
 	\end{align*}
 Some specific examples:
 \begin{enumerate}
@@ -225,7 +230,7 @@ Where $E$ is defined as the mechanical energy of the system.
 The Lagrangian method is based on the \emph{principle of stationary action}.
 	\begin{align*}
 	\Lagr(\dot{x},x,t) = T - V \\
-	\frac{d}{dt}(\frac{\partial \Lagr}{\partial \dot{x}}) - \frac{\partial \Lagr}{\partial x} = 0
+	\frac{d}{dt}\left( \pd{\Lagr}{\dot{x}} \right) - \pd{\Lagr}{x} = 0
 	\end{align*}
 The Hamiltonian $\Hami$ can be used for the conservation of energy:
 	\begin{align*}
@@ -808,7 +813,7 @@ A wave is a disturbance of a continuous medium that propagates with a fixed shap
 	\end{align*}
 All such functions $f$ are the solutions to the wave equation:
 	\begin{align*}
-	\frac{\partial^2 f}{\partial x^2}=\frac{1}{v^2}\frac{\partial^2 f}{\partial t^2}
+	\pd{^2 f}{x^2}=\frac{1}{v^2}\pd{^2 f}{t^2}
 	\end{align*}
 Where $v$ is the speed of propagation.
 \subsubsection{Electromagnetic Waves}
@@ -900,8 +905,57 @@ Double slit including effects of diffraction:
 \section{Thermodynamics}
 %%%%%%%%%%%%%%%%%
 
-\section{Quantum Theory}
+\section{Quantum Mechanics}
+%%%%%%%%%%%%%%%%%
+\subsection{Schr\"{o}dinger's Equation}
+%%%%%%%%%%%%%%%%%
+$\Psi(x, t)$ is a complex wave function of time and position, the one-dimensional Schr\"{o}dinger's equation is given by:
+	\begin{align*}
+	i \hbar \pd{\Psi}{t} = - \frac{\hbar^2}{2m} \pd{^2 \Psi}{x^2} + V\Psi
+	\end{align*}
+If we denote the complex conjugate of the wave function to be $\cc{\Psi}$, the conjugate of Schr\"{o}dinger's equation is:
+	\begin{align*}
+	-i \hbar \pd{\cc{\Psi}}{t} = \frac{\hbar^2}{2m} \pd{^2 \cc{\Psi}}{x^2} - V\cc{\Psi}
+	\end{align*}
+At time $t$, the probability of finding a particle from $x=a$ to $x=b$ is:
+	\begin{align*}
+	\int_{a}^{b} |\Psi(x, t)|^2 dx = \int_{a}^{b}\Psi\cc{\Psi}dx
+	\end{align*}
+\subsubsection{Normalization}
+%%%%%%%%%%%%%%%%%
+All wave functions must be normalized, so that the probability of finding the particle over all space is 1:
+	\begin{align*}
+	\int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 1
+	\end{align*}
+Once a function is normalized, it remains normalized as time evolves:
+	\begin{align*}
+	\frac{d}{dt} \int_{-\infty}^{\infty} \Psi \cc{\Psi} = 0
+	\end{align*}
+\subsubsection{Expectation Values}
+%%%%%%%%%%%%%%%%%
+An expectation value of an observed quantity is the average of the measurement performed on many ``copies'' of the system at the same time.
+	\begin{align*}
+	\langle x\rangle &= \int_{-\infty}^{\infty} x |\Psi(x,t)|^2 dx \\
+	&= \int_{-\infty}^{\infty} \cc{\Psi} x \Psi dx \\
+	\langle p\rangle &= m\frac{d\langle x\rangle}{dt} \\
+	&= \int_{-\infty}^{\infty} \cc{\Psi} \left( -i\hbar \pd{}{x} \right) \Psi dx
+	\end{align*}
+In general, the expectation value of any quantity is:
+	\begin{align*}
+	\langle Q(x, p) \rangle = \int \cc{\Psi} Q\left(x, -i\hbar\pd{}{x} \right) \Psi dx
+	\end{align*}
+
+\subsection{Time Independent Solution}
 %%%%%%%%%%%%%%%%%
 
 \end{multicols*}
 \end{document}
+
+
+
+
+
+
+
+
+
