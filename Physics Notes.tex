@@ -201,21 +201,21 @@ Force felt by an object in a non-inertial frame. Let $\ve{r}$ to be the position
 %%%%%%%%%%%%%%%%%
 For a force in one dimension:
 	\begin{align*}
-	mv\frac{dv}{dx} &= F(x) \\
-	\frac{1}{2}mv^2 &= E + \int_{x_0}^{x} F(x') dx'
+	m \dot{\ve{r}} \frac{d\dot{\ve{r}}}{d\ve{r}} &= \ve{F}(\ve{r}) \\
+	\frac{1}{2}m |\dot{\ve{r}}|^2 &= E + \int_{\ve{r_0}}^{\ve{r}} \ve{F}(\ve{r}') \cdot d\ve{r}'
 	\end{align*}
 We can then define \emph{potential energy}: 
 	\begin{align*}
-	U(x) = - \int_{x_0}^x F(x') dx' 
+	U(\ve{r}) = - \int_{\ve{r_0}}^{\ve{r}} F(\ve{r}') \cdot d\ve{r}' 
 	\end{align*}
 Work-Energy theorem:
 	\begin{align*}
-	W_{AB} &= \int_{x_1}^{x_2} F(x') dx' \\
+	W_{AB} &= \int_{\ve{r_1}}^{\ve{r_2}} F(\ve{r}') \cdot d\ve{r}' \\
 	W_{\text{total}} &= \Delta KE
 	\end{align*}
 Conservative forces are forces that only depend on {\em position}. For conservative forces:
 	\begin{align*}
-	\oint \ve{F} \cdot d\ve{l} &= 0 \\
+	\oint \ve{F} \cdot d\ve{r} &= 0 \\
 	\ve{\nabla} \times \ve{F} &= 0 \\
 	\ve{F} &= - \ve{\nabla} U \\
 	W_{C} &= -\Delta U
@@ -246,7 +246,7 @@ Power is the rate of work done per unit time:
 	\end{align*}
 Mechanical power:
 	\begin{align*}
-	P=\frac{d}{dt}\oint \ve{F} \cdot d\ve{x}&=\frac{d}{dt}\oint \ve{F} \cdot \frac{d\ve{x}}{dt} dt\\
+	P=\frac{d}{dt}\oint \ve{F} \cdot d\ve{r}&=\frac{d}{dt}\oint \ve{F} \cdot \frac{d\ve{r}}{dt} dt\\
 	&=\ve{F} \cdot \ve{v}
 	\end{align*}
 \subsection{Momentum}
@@ -277,7 +277,7 @@ For other collisions in 1-D, we have the coefficient of restitution $e$:
 %%%%%%%%%%%%%%%%%
 For any particle subjected to a central force,
 	\begin{align*}
-	F(r) &= m r \dot{\theta}^2 - m \ddot{r} \\
+	F(r) &= m \ddot{r} - m r \dot{\theta}^2\\
 	L &= mr^2\dot{\theta}
 	\end{align*}
 Because angular momentum $L$ is constant, we can look at central forces systems in 1-dimension.
