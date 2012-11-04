@@ -21,22 +21,23 @@
     \@starttoc{toc}%
 }
 \makeatother
-
-											%-----------Symbols-----------
-\newcommand{\Lagr}{\mathcal{L}}					%Lagrangian
-\newcommand{\Hami}{\mathcal{H}}					%Hamiltonian
-\newcommand{\emf}{\mathcal{E}}					%EMF
-\newcommand{\Imp}{\mathcal{I}}					%Impulse
-
-											%-----------Functions-----------
-\newcommand{\ve}[1]{\ensuremath{\bm{#1}}}			%Vector
-\newcommand{\fve}[1]{\ensuremath{\vec{#1}}}			%Four-vector
-\newcommand{\dr}{\ensuremath{\text{r}}}				%Displacement r 
-\newcommand{\dvr}{\ensuremath{\textbf{r}}}			%Displacement vector r 
-\newcommand{\dvrhat}{\ensuremath{\ve{\hat{\dvr}}}}	%Displacement unit vector r 
-\newcommand{\cc}[1]{\ensuremath{#1^{\ast}}}			%Complex Conjugate
+											% -----------Symbols-----------
+\newcommand{\Lagr}{\mathcal{L}}					% Lagrangian
+\newcommand{\Hami}{\mathcal{H}}					% Hamiltonian
+\newcommand{\emf}{\mathcal{E}}					% EMF
+\newcommand{\Imp}{\mathcal{I}}					% Impulse
+											% -----------Functions-----------
+\newcommand{\ve}[1]{\ensuremath{\bm{#1}}}			% Vector
+\newcommand{\uve}[1]{\ensuremath{\bm{\hat{#1}}}}          % Unit Vector
+\newcommand{\tensor}[1]{\ensuremath{\text{\bf{#1}}}}	% Tensor
+\newcommand{\fve}[1]{\ensuremath{\vec{#1}}}			% Four-vector
+\newcommand{\dr}{\ensuremath{\text{r}}}				% Displacement r 
+\newcommand{\dvr}{\ensuremath{\textbf{r}}}			% Displacement vector r 
+\newcommand{\dvrhat}{\ensuremath{\ve{\hat{\dvr}}}}	% Displacement unit vector r 
+\newcommand{\cc}[1]{\ensuremath{#1^{\ast}}}			% Complex Conjugate
 \newcommand{\pd}[2]{
 \ensuremath{ \frac{\partial #1}{\partial #2} }}			% Partial Derivative
+\newcommand{\operator}[1]{\ensuremath{\hat{\text{#1}}}}	% Operator
 
 
 \title{Physics Notes}
@@ -116,14 +117,14 @@ Four basic forces to consider:
 %%%%%%%%%%%%%%%%%
 Differentiation of unit vectors:
 	\begin{align*}
-	\dot{\hat{\ve{r}}} &= \dot{\theta} \hat{\ve{\theta}}\\
-	\dot{\hat{\ve{\theta}}} &= -\dot{\theta} \hat{\ve{r}}
+	\dot{\uve{r}} &= \dot{\theta} \uve{\theta}\\
+	\dot{\uve{\theta}} &= -\dot{\theta} \uve{r}
 	\end{align*}
 Velocity and acceleration in polar form:
 	\begin{align*}
-	\ve{r} &= r\hat{\ve{r}} \\
-	\ve{v} &= \dot{\ve{r}} = \dot{r} \hat{\ve{r}} + r \dot{\theta} \hat{\ve{\theta}} \\
-	\ve{a} &= \dot{\ve{v}} = (\ddot{r} - \dot{\theta}^2 r) \hat{\ve{r}} + (r \ddot{\theta} + 2 \dot{r} \dot{\theta}) \hat{\ve{\theta}}
+	\ve{r} &= r\uve{r} \\
+	\ve{v} &= \dot{\ve{r}} = \dot{r} \uve{r} + r \dot{\theta} \uve{\theta} \\
+	\ve{a} &= \dot{\ve{v}} = (\ddot{r} - \dot{\theta}^2 r) \uve{r} + (r \ddot{\theta} + 2 \dot{r} \dot{\theta})\uve{\theta}
 	\end{align*}
 \subsection{Dynamics}
 %%%%%%%%%%%%%%%%%
@@ -289,7 +290,7 @@ Because angular momentum $L$ is constant, we can look at central forces systems 
 %%%%%%%%%%%%%%%%%
 For any two point masses of $m_1$ and $m_2$ in empty space, the gravitational force between them is:
 	\begin{align*}
-	\ve{F}=\frac{Gm_1m_2}{|\ve{r}|^2}\hat{\ve{r}}
+	\ve{F}=\frac{Gm_1m_2}{|\ve{r}|^2}\uve{r}
 	\end{align*}
 Where $\ve{r}$ is the position vector of one mass respect to the other, and $G$ is the gravitational constant.
 	\begin{align*}
@@ -306,7 +307,7 @@ The centripetal acceleration $a$ and the force required to keep the object in it
 	a&=\frac{v^2}{r}=\omega^2r\\
 	F&=\frac{mv^2}{r}=m\omega^2r
 	\end{align*}
-\subsection{\texorpdfstring{Rotational Dynamics (Constant $\ve{\hat{L}}$)}{Rotational Dynamics (Constant Direction of L)}} %Prevents \hyperref error
+\subsection{\texorpdfstring{Rotational Dynamics (Constant $\uve{L}$)}{Rotational Dynamics (Constant Direction of L)}} %Prevents \hyperref error
 %%%%%%%%%%%%%%%%%
 \subsubsection{Angular Momentum}
 %%%%%%%%%%%%%%%%%
@@ -316,7 +317,7 @@ The angular momentum of a point mass is defined as:
 	\end{align*}
 For a flat object lying on a 2-D plane rotating with angular speed $\omega$:
 	\begin{align*}
-	\ve{L}=\int\ve{r}\times\ve{p}=\int r^2\omega\ve{\hat{z}}dm
+	\ve{L}=\int\ve{r}\times\ve{p}=\int r^2\omega \uve{z}dm
 	\end{align*}
 If we define the {\em moment of intertia} about the $z$-axis to be $I_z=\int (x^2+y^2)dm$, we have:
 	\begin{align*}
@@ -329,7 +330,7 @@ For the $z$-component of $\ve{L}$ and kinetic energy $T$.
 %%%%%%%%%%%%%%%%%
 For an object with a moving center of mass, and rotating at $\omega$ about it, 
 	\begin{align*}
-	\ve{L}&=\ve{r_\text{CM}}\times\ve{p_\text{CM}}+I_\text{CM}\omega\ve{\hat{z}}\\
+	\ve{L}&=\ve{r_\text{CM}}\times\ve{p_\text{CM}}+I_\text{CM}\omega \uve{z}\\
 	T&=\frac{1}{2}mv_\text{CM}^2+\frac{1}{2}I_\text{CM}\omega^2
 	\end{align*}
 \subsubsection{Torque}
@@ -396,6 +397,58 @@ Common moments of inertia (taken about center of mass unless stated):
 \item Hollow sphere with radius $r$: $\frac{2}{3}mr^2$
 \item Solid sphere with radius $r$: $\frac{2}{5}mr^2$
 \end{enumerate}
+
+\subsection{General Rotational Motion}
+%%%%%%%%%%%%%%%%%
+For any body moving in space, its motion can be written as a sum of its translational motion and a rotation about an axis at a particular time. 
+
+\subsubsection{Angular Velocity}
+%%%%%%%%%%%%%%%%%
+The angular velocity vector $\ve{\omega}$ points along the axis of rotation, with a  magnitude equal to its angular speed. Its direction is determined by convention of the right hand rule. For an object rotating at $\ve{\omega}$, the velocity of a point at $\ve{r}$ is:
+	\begin{align*}
+	\ve{v} = \ve{\omega} \times \ve{r}
+	\end{align*}
+Angular velocities add like vectors. Let $S_1$, $S_2$ and $S_3$ be coordinate systems. If $S_1$ rotates with $\ve{\omega}_{1, 2}$ with respect to $S_2$, and $S_2$ rotates with $\ve{\omega}_{2, 3}$ with respect to $S_3$, then $S_1$ rotates instantaneously with respect to $S_3$ at: 
+	\begin{align*}
+	\ve{\omega}_{1, 3} = \ve{\omega}_{1, 2} + \ve{\omega}_{2, 3}
+	\end{align*}
+
+\subsubsection{Angular Momentum}
+%%%%%%%%%%%%%%%%%
+	\begin{align*}
+	\ve{L} &= \int \ve{r} \times (\ve{\omega} \times \ve{r}) dm \\
+	&= \tensor{I} \ve{\omega}
+	\end{align*}
+$\tensor{I}$ is the moment of inertia tensor:
+\vspace*{-0.7em}
+\begin{center}
+\resizebox{\hsize}{!}{%
+	$\begin{pmatrix}
+	\int(y^2 +z^2)	& -\int xy 			& -\int zx  			\\
+	- \int xy 		& \int(z^2 + x^2)	& -\int yz 			\\
+	- \int zx 		& -\int yz 		 	& \int(x^2 + y^2) 	\\
+	\end{pmatrix}$%
+}
+\end{center}
+The kinetic energy of the object is given by:
+	\begin{align*}
+	T &= \int\frac{1}{2} ||\ve{\omega} \times \ve{r}||^2 dm \\
+	&= \frac{1}{2} \ve{\omega} \cdot \tensor{I}\ve{\omega} = \frac{1}{2} \ve{\omega} \cdot \ve{L}
+	\end{align*}
+To find the angular momentum for an object of mass $M$ in general motion, let the position of its center of mass be $\ve{R}$, its velocity be $\ve{V}$. Then:
+	\begin{align*}
+	\ve{L} = M(\ve{R} \times \ve{V}) + \ve{L}_{\text{CM}}
+	\end{align*}
+The kinetic energy of the object is:
+	\begin{align*}
+	T = \frac{1}{2}MV^2 + \frac{1}{2}\ve{\omega}' \ve{L}_{\text{CM}}
+	\end{align*}
+Where $\ve{\omega}'$ and $\ve{L}_{\text{CM}}$ are measured about the center of mass along axes parallel to the fixed-frame axes.
+
+\subsubsection{Principal Axes}
+%%%%%%%%%%%%%%%%%
+A principal axis is an axis of rotation $\uve{\omega}$ such that $\tensor{I}\uve{\omega} = I\uve{\omega}$. An object can rotate about a principal axis at constant angular velocity with no external torque. An orthonormal set of principle axis exists for every object.
+
 \section{Special Relativity}
 %%%%%%%%%%%%%%%%%
 \subsection{Postulates}
@@ -947,7 +1000,28 @@ In general, the expectation value of any quantity is:
 
 \subsection{Time Independent Solution}
 %%%%%%%%%%%%%%%%%
-
+We solve Schr\"{o}dinger's equation by separation of variables. Let:
+	\begin{align*}
+	\Psi(x, t) = \psi(x) \phi(t)
+	\end{align*}
+Then the equation can be written as:
+	\begin{align*}
+	i\hbar \psi \pd{\phi}{t} = -\frac{\hbar^2}{2m} \pd{^2 \psi}{x^2} \phi + V \phi \psi \\
+	\left( \frac{i\hbar}{\phi} \pd{\phi}{t} \right) + \left( \frac{\hbar^2}{2m\psi} \pd{^2 \psi}{x^2} -V(x) \right) = 0
+	\end{align*}
+As the two terms in the equation are independent of each other and they sum to zero, they must be constant. If we let:
+	\begin{align*}
+	E &= \frac{i\hbar}{\phi} \pd{\phi}{t} \\
+	\phi(t) &= e^{iE/ \hbar t}
+	\end{align*}
+The time independent solution is given by:
+	\begin{align*}
+	-\frac{\hbar^2}{2m}\pd{^2\psi}{x^2} + V(x) \psi = E \psi
+	\end{align*}
+If we define the Hamiltonian operator $\operator{H} = -\frac{\hbar^2}{2m}\pd{^2}{x^2} + V$:
+	\begin{align*}
+	\operator{H} \psi = E\psi
+	\end{align*}
 \end{multicols*}
 \end{document}
 
