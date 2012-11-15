@@ -177,9 +177,14 @@ There are 3 assumptions made for a body moving without any constraint:
 \end{enumerate}
 \subsubsection{Fictitious Forces}
 %%%%%%%%%%%%%%%%%
-Force felt by an object in a non-inertial frame. Let $\ve{r}$ to be the position vector of the object in the accelerated frame and $\ve{R}$ be the position vector of the accelerated frame, then the possible forces that acts on $\ve{r}$ are:
+For any vector $\ve{A}$ in a moving frame, we calculate its time derivative in a frame rotating at $\omega$ respect to the stationary frame:
 	\begin{align*}
-	\frac{\delta^2\ve{r}}{\delta t ^2} = \frac{\ve{F}}{m}
+	\frac{d\ve{A}}{dt}_{\text{stat}} = \frac{d\ve{A}}{dt}_{\text{mov}} + \ve{\omega} \times \ve{A}
+	\end{align*}
+\noindent
+Let $\ve{r}$ be the position vector of the object in an accelerated frame and $\ve{R}$ be the vector to the origin of the accelerated frame, then the possible forces that acts on $\ve{r}$ in the moving frame are:
+	\begin{align*}
+	\frac{d^2\ve{r}}{dt ^2} = \frac{\ve{F}}{m}
 	&- \frac{d^2\ve{R}}{dt^2}
 	- \ve{\omega} \times (\ve{\omega}\times\ve{r})\\
 	&- 2\ve{\omega} \times \ve{v}
@@ -391,8 +396,8 @@ Common moments of inertia (taken about center of mass unless stated):
 \begin{enumerate}
 \setlength{\itemsep}{2mm}
 \item Point mass at $r$ from axis: $mr^2$
-\item Rod of length $L$: $\frac{1}{3}mL^2$
-\item Rod of length $L$ about one end: $\frac{1}{12}mL^2$
+\item Rod of length $L$ about center: $\frac{1}{13}mL^2$
+\item Rod of length $L$ about one end: $\frac{1}{3}mL^2$
 \item Solid disk of radius $r$ perpendicular to axis: $\frac{1}{2}mr^2$
 \item Hollow sphere with radius $r$: $\frac{2}{3}mr^2$
 \item Solid sphere with radius $r$: $\frac{2}{5}mr^2$
