@@ -877,13 +877,43 @@ F = -\frac{dV}{dx}&=-V''(x_0)(x-x_0) \\
 %%%%%%%%%%%%%%%%%
 A wave is a disturbance of a continuous medium that propagates with a fixed shape at constant velocity. In one dimension:
 \begin{align*}
-f(z,t)=f(z-vt,0)=g(z-vt)
+u(z,t)=u(z-vt,0)=f(z-vt)
 \end{align*}
 All such functions $f$ are the solutions to the wave equation:
 \begin{align*}
-\pd{^2 f}{x^2}=\frac{1}{v^2}\pd{^2 f}{t^2}
+\pd{^2 u}{x^2}=\frac{1}{v^2}\pd{^2 u}{t^2}
 \end{align*}
 Where $v$ is the speed of propagation.
+
+\subsubsection{String with Fixed Ends}
+%%%%%%%%%%%%%%%%%
+If the equation is subject to the following initial and boundary conditions:
+\begin{align*}
+u_x(0, t) &= u_x(L, t) = 0 \\
+u(x, 0) &= f(x) \\
+u_t(x, 0) &= g(x)
+\end{align*}
+The solution for these conditions is:
+\begin{align*}
+u(x, t) &= \sum_{n=1}^{\infty}\sin{\frac{n\pi}{L} x} \; \cdot \\
+&\left( a_n\sin{\frac{n \pi \alpha}{L} t}
++ b_n\cos{\frac{n \pi \alpha}{L} t} \right) \\
+a_n &= \frac{2}{n \pi \alpha}\int_0^L g(x)\sin\frac{n \pi x}{L} dx \\
+b_n &= \frac{2}{L}\int_0^L f(x)\sin\frac{n \pi x}{L} dx
+\end{align*}
+
+\subsubsection{D'Alembert's Solution}
+%%%%%%%%%%%%%%%%%
+For an infinite string, it can be proved that any solution to the wave equation can be written as a superposition of two waves of velocity $v$, one travelling to the left, the other travelling to the right. For the initial conditions:
+\begin{align*}
+u(x, 0) &= f(x) \\
+u_t(x, 0) &= g(x)
+\end{align*}
+The solution of the wave equation is:
+\begin{align*}
+u(x, t) = \frac{1}{2} &\bigg[ f(x+vt) + f(x-vt)  \\
+&+ \frac{1}{v}\int_{x-vt}^{x+vt}g(x') dx' \bigg]
+\end{align*}
 \subsubsection{Electromagnetic Waves}
 %%%%%%%%%%%%%%%%%
 
