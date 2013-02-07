@@ -23,9 +23,19 @@
 *.out
 *.synctex.gz
 
+# emacs specific
+\#*\#
+
 # OS generated files #
 ######################
 .DS_Store*
 ehthumbs.db
 Icon?
 Thumbs.db
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out

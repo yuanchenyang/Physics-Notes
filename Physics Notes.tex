@@ -1,4 +1,3 @@
-
 % Copyright (c) 2011-2012 by Chenyang Yuan. 
 % This work is made available under the terms of the Creative Commons Attribution-NonCommercial license:
 % http://creativecommons.org/licenses/by-nc/3.0/
@@ -60,9 +59,9 @@
 \includegraphics[scale=0.7]{deed.png} 
 \end{center}
 
-\begin{multicols}{2}
+\begin{multicols*}{2}
 \tableofcontents
-\end{multicols}
+\end{multicols*}
 %\pagebreak
 \newpage
 
@@ -393,6 +392,7 @@ I=MR^2+I_0
 \subsubsection{Perpendicular-axis Theorem}
 %%%%%%%%%%%%%%%%%
 For flat 2-D objects in the $x$-$y$ plane, and orthogonal axes $x$, $y$ and $z$:
+
 \begin{align*}
 I_z=I_x+I_y
 \end{align*}
@@ -885,6 +885,7 @@ All such functions $f$ are the solutions to the wave equation:
 \end{align*}
 Where $v$ is the speed of propagation.
 
+
 \subsubsection{String with Fixed Ends}
 %%%%%%%%%%%%%%%%%
 If the equation is subject to the following initial and boundary conditions:
@@ -1002,6 +1003,24 @@ I = I_{\text{max}} &\cos^2\left(\frac{\pi d \sin{\theta}}{\lambda} \right) \\
 	
 \section{Thermodynamics}
 %%%%%%%%%%%%%%%%%
+If two objects are in thermal equilibrium with a third system, then they are in equilibrium with each other. 
+
+\subsection{Thermal Expansion}
+For linear expansion, the change in length is:
+\begin{align*}
+  \Delta L = \alpha L_0 \Delta T
+\end{align*}
+Where $\alpha$ is the coefficient of linear expansion. For area expansion, $\beta \approx 2 \alpha $. For volume expansion, $\gamma \approx 3 \alpha$.
+
+\subsection{Kinetic Theory of Gases}
+
+
+\subsection{Thermodynamic Processes}
+
+
+\subsection{Entropy}
+
+
 
 \section{Quantum Mechanics}
 %%%%%%%%%%%%%%%%%
@@ -1061,20 +1080,11 @@ E &= \frac{i\hbar}{\phi} \pd{\phi}{t} \\
 \end{align*}
 The time independent solution is given by:
 \begin{align*}
--\frac{\hbar^2}{2m}\pd{^2\psi}{x^2} + V(x) \psi = E \psi
+-\frac{\hbar^2}{2m}\pd{^2\psi}{x^2} + V(x) \psi = E \psi\
 \end{align*}
-If we define the Hamiltonian operator $\operator{H} = -\frac{\hbar^2}{2m}\pd{^2}{x^2} + V$:
+If we define the Hamiltonian operator $\operator{H} = -\frac{\hbar^2}{2m}\pd{^2}{x^2} + V$,
 \begin{align*}
 \operator{H} \psi = E\psi
 \end{align*}
 \end{multicols*}
 \end{document}
-
-
-
-
-
-
-
-
-
