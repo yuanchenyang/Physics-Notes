@@ -3,7 +3,7 @@ file = Physics\ Notes
 flags = --file-line-error --synctex=1
 compile-command = $(tex) $(flags) $(file).tex
 
-all: once
+all: twice
 
 once: $(file).tex
 	$(compile-command)

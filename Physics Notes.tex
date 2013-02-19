@@ -1,4 +1,4 @@
-% Copyright (c) 2011-2012 by Chenyang Yuan. 
+% Copyright (c) 2011-2013 by Chenyang Yuan. 
 % This work is made available under the terms of the Creative Commons Attribution-NonCommercial license:
 % http://creativecommons.org/licenses/by-nc/3.0/
 
@@ -1010,10 +1010,61 @@ For linear expansion, the change in length is:
 \begin{align*}
   \Delta L = \alpha L_0 \Delta T
 \end{align*}
-Where $\alpha$ is the coefficient of linear expansion. For area expansion, $\beta \approx 2 \alpha $. For volume expansion, $\gamma \approx 3 \alpha$.
+Where $\alpha$ is the coefficient of linear expansion. For area expansion, use approximately $2 \alpha $. For volume expansion, use approximately $3 \alpha$.
 
 \subsection{Kinetic Theory of Gases}
+\subsubsection{Ideal Gas Law}
+An ideal gas' molecules are treated as non-interacting point particles. For an ideal gas of $N$ particles at pressure $P$, volume $V$ and temperature $T$:
+\begin{align*}
+  PV = NK_BT
+\end{align*}
+For a non-ideal gas, the Van der Waals correction to the ideal gas law is:
+\begin{align*}
+  \left( P + a \left(\frac{n}{V}\right) ^2 \right) \left( V - bn\right) = nRT
+\end{align*}
+Where $a$ and $b$ are constants.
 
+\subsubsection{Internal Energy}
+Different gases at the same temperature have the same average kinetic energy. Thus we define temperature of a substance to be its average kinetic energy. For a monatomic ideal gas:
+\begin{align*}
+  \frac{1}{2}m\langle v^2 \rangle = \frac{3}{2}KT
+\end{align*}
+\noindent
+For a gas molecule with $r$ atoms, its total kinetic energy, center of mass kinetic energy and internal vibrational/rotational energy are given by:
+\begin{align*}
+  E_{\text{Total}} &= \frac{3r}{2}KT \\
+  E_{\text{COM}} &= \frac{3}{2}KT \\
+  E_{\text{Internal}} &= \frac{3(r-1)}{2}KT 
+\end{align*}
+\noindent
+The equipartition theorem states that each degree of freedom a molecule has contributes an extra $\frac{1}{2}KT$ of kinetic energy.
+
+\subsubsection{Maxwell Distribution}
+For an ideal gas, the distrubution of its velocities is:
+\begin{align*}
+  f(v) = 4 \pi v^2 \left( \frac{m}{2 \pi kT} \right)^{\frac{3}{2}} 
+  e^{-\frac{mv^2}{2kT}}
+\end{align*}
+From this distribution, we can get the average speed of a particle:
+\begin{align*}
+  \langle v \rangle = \sqrt{\frac{8kT}{\pi m}}
+\end{align*}
+The most probable velocty is the maximum point of the distribution:
+\begin{align*}
+  v_{\text{mp}} = \sqrt{\frac{2kT}{m}}
+\end{align*}
+For any two particles, their average relative speed is:
+\begin{align*}
+  \langle v_{\text{rel}} \rangle = \sqrt{2} \langle v \rangle = 
+  \sqrt{\frac{16kT}{\pi m}}
+\end{align*}
+From this, we can get the mean free path of a particle, the average distance a particle travels before hitting another particle:
+\begin{align*}
+  l_m = \frac{1}{4 \pi \sqrt{2} r^2 n}
+\end{align*}
+Where $n$ is the number density of the particle and $r$ is its radius.
+
+\subsection{Heat Teansfer}
 
 \subsection{Thermodynamic Processes}
 
