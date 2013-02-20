@@ -1006,6 +1006,7 @@ I = I_{\text{max}} &\cos^2\left(\frac{\pi d \sin{\theta}}{\lambda} \right) \\
 If two objects are in thermal equilibrium with a third system, then they are in equilibrium with each other. 
 
 \subsection{Thermal Expansion}
+%%%%%%%%%%%%%%%%%
 For linear expansion, the change in length is:
 \begin{align*}
   \Delta L = \alpha L_0 \Delta T
@@ -1013,7 +1014,9 @@ For linear expansion, the change in length is:
 Where $\alpha$ is the coefficient of linear expansion. For area expansion, use approximately $2 \alpha $. For volume expansion, use approximately $3 \alpha$.
 
 \subsection{Kinetic Theory of Gases}
+%%%%%%%%%%%%%%%%%
 \subsubsection{Ideal Gas Law}
+%%%%%%%%%%%%%%%%%
 An ideal gas' molecules are treated as non-interacting point particles. For an ideal gas of $N$ particles at pressure $P$, volume $V$ and temperature $T$:
 \begin{align*}
   PV = NK_BT
@@ -1025,21 +1028,23 @@ For a non-ideal gas, the Van der Waals correction to the ideal gas law is:
 Where $a$ and $b$ are constants.
 
 \subsubsection{Internal Energy}
+%%%%%%%%%%%%%%%%%
 Different gases at the same temperature have the same average kinetic energy. Thus we define temperature of a substance to be its average kinetic energy. For a monatomic ideal gas:
 \begin{align*}
-  \frac{1}{2}m\langle v^2 \rangle = \frac{3}{2}KT
+  \frac{1}{2}m\langle v^2 \rangle = \frac{3}{2}kT
 \end{align*}
 \noindent
 For a gas molecule with $r$ atoms, its total kinetic energy, center of mass kinetic energy and internal vibrational/rotational energy are given by:
 \begin{align*}
-  E_{\text{Total}} &= \frac{3r}{2}KT \\
-  E_{\text{COM}} &= \frac{3}{2}KT \\
-  E_{\text{Internal}} &= \frac{3(r-1)}{2}KT 
+  E_{\text{Total}} &= \frac{3r}{2}kT \\
+  E_{\text{COM}} &= \frac{3}{2}kT \\
+  E_{\text{Internal}} &= \frac{3(r-1)}{2}kT 
 \end{align*}
 \noindent
 The equipartition theorem states that each degree of freedom a molecule has contributes an extra $\frac{1}{2}KT$ of kinetic energy.
 
 \subsubsection{Maxwell Distribution}
+%%%%%%%%%%%%%%%%%
 For an ideal gas, the distrubution of its velocities is:
 \begin{align*}
   f(v) = 4 \pi v^2 \left( \frac{m}{2 \pi kT} \right)^{\frac{3}{2}} 
@@ -1065,13 +1070,98 @@ From this, we can get the mean free path of a particle, the average distance a p
 Where $n$ is the number density of the particle and $r$ is its radius.
 
 \subsection{Heat Teansfer}
+%%%%%%%%%%%%%%%%%
+For heat transfer through a material with length $l$, area $A$ and thermal conductivity $K$ between two heat reservoirs $T_1 > T_2$:
+\begin{align*}
+  \frac{dQ}{dt} = \frac{KA (T_1 - T_2)}{l}
+\end{align*}
+For a blackbody at temperature $T$ radiating heat away:
+\begin{align*}
+  \frac{dQ}{dt} = \sigma A T^4
+\end{align*}
+The heat transfered by changing the temperature of a solid of mass $m$ with heat capacity $c$ is:
+\begin{align*}
+  \Delta Q = mc \Delta T
+\end{align*}
 
 \subsection{Thermodynamic Processes}
+%%%%%%%%%%%%%%%%%
+In all the process described below, the heat $Q$ that goes into the gas is positive, and the work done on the gas $W$ is positive. The first law of thermodynamics states that the change of internal energy $U$ is:
+\begin{align*}
+  U &= Q + W \\
+  U (1- \gamma)  &= NkT
+\end{align*}
+Where $\gamma = C_p/C_v$ is the ideal gas constant and $C_v = C_p - k$.
+\subsubsection{Isochoric}
+%%%%%%%%%%%%%%%%%
+In this constant volume process:
+\begin{align*}
+  W &= 0 \\
+  Q &= N C_v \Delta T \\
+  U &= Q
+\end{align*}
 
+\subsubsection{Isobaric}
+%%%%%%%%%%%%%%%%%
+In a constant pressure volume expansion from $V_1$ to $V_2$:
+\begin{align*}
+  W &= P(V_1 - V_2) \\
+  Q &= N C_p \Delta T \\
+  U &= N C_v \Delta T
+\end{align*}
+
+\subsubsection{Isothermal}
+%%%%%%%%%%%%%%%%%
+For an isothermal expansion from $V_1$ to $V_2$:
+\begin{align*}
+  W &= NkT \ln \left( \frac{V_1}{V_2} \right) \\
+  Q &= - W \\
+  U &= 0 
+\end{align*}
+
+\subsubsection{Adiabatic}
+%%%%%%%%%%%%%%%%%
+For an adiabatic process,
+\begin{align*}
+  W &= - \int P dV \\
+  Q &= 0 \\
+  U &= W
+\end{align*}
+Integrating the work done, we get the following relation:
+\begin{align*}
+  PV^{\gamma} = \text{constant}
+\end{align*}
+
+\subsection{Heat Engines}
+%%%%%%%%%%%%%%%%%
+The efficiency of a heat engine that takes in $Q_H$ and gives out $Q_L$ while doing work $W$, its efficiency is given by:
+\begin{align*}
+  \eta &= \frac{|W|}{|Q_H|} \\
+  &= 1 - \frac{|Q_L|}{|Q_H|}
+\end{align*}
+The efficiency of a heat pump that uses $W$ to pump $Q_L$ from the col reservoir is:
+\begin{align*}
+  \eta &= \frac{|Q_L|}{|W|}
+\end{align*}
+All reversible engines operating between the same two temperatures have the same efficiency as a Carnot engine, as you can fit many infinitisimally small Carnot cycles into any reversible cycle:
+\begin{align*}
+  \eta_{\text{carnot}} = 1 - \frac{T_L}{T_H}
+\end{align*}
+Any irreversible engine cannot have a greater efficiency.
 
 \subsection{Entropy}
+%%%%%%%%%%%%%%%%%
+Entropy is the measure of disorder, defined as:
+\begin{align*}
+  dS = \frac{dQ}{T}
+\end{align*}
+Entropy is a state function that doesn't depend on the path travelled. The entropy change for a cyclic reversible process is zero.
 
-
+\noindent
+Boltzmann defined entropy of a system by counting the number of indistinguishable microstates $w$ inside:
+\begin{align*}
+  S = k \ln w
+\end{align*}
 
 \section{Quantum Mechanics}
 %%%%%%%%%%%%%%%%%
