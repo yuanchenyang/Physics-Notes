@@ -7,7 +7,9 @@ How to compile
 -------------
 
 To compile on *nix systems, make sure you have ```pdflatex``` in your path, change into the directory and run:
-    make
+```
+make
+```
 
 How to switch between SI/CGS units
 ----------------------------------
