@@ -16,22 +16,30 @@
 \usepackage{hyperref}
 \usepackage{etoolbox}
 
-\newtoggle{cgs}
 % Compile in CGS units
 % To compile in SI units use: togglefalse{cgs}
+\newtoggle{cgs}
 \toggletrue{cgs}
 
-
+% Remove table of contents' name
 \makeatletter
 \renewcommand\tableofcontents{%
   \@starttoc{toc}%
 }
 \makeatother
+
 % -----------Symbols-----------
-\newcommand{\Lagr}{\mathcal{L}}	% Lagrangian
-\newcommand{\Hami}{\mathcal{H}}	% Hamiltonian
-\newcommand{\emf}{\mathcal{E}}	% EMF
-\newcommand{\Imp}{\mathcal{I}}	% Impulse
+\newcommand{\Lagr}{\mathcal{L}}	       % Lagrangian
+\newcommand{\Hami}{\mathcal{H}}	       % Hamiltonian
+\newcommand{\emf}{\mathcal{E}}	       % EMF
+\newcommand{\Imp}{\mathcal{I}}	       % Impulse
+\newcommand{\dr}{
+  \ensuremath{\text{r}}}               % Displacement r 
+\newcommand{\dvr}{
+  \ensuremath{\textbf{r}}}             % Displacement vector r 
+\newcommand{\dvrhat}{
+  \ensuremath{\ve{\hat{\dvr}}}}	       % Displacement unit vector r 
+
 % -----------Functions-----------
 \newcommand{\ve}[1]{
   \ensuremath{\bm{#1}}}	               % Vector
@@ -41,12 +49,6 @@
   \ensuremath{\text{\bf{#1}}}}         % Tensor
 \newcommand{\fve}[1]{
   \ensuremath{\vec{#1}}}               % Four-vector
-\newcommand{\dr}{
-  \ensuremath{\text{r}}}               % Displacement r 
-\newcommand{\dvr}{
-  \ensuremath{\textbf{r}}}             % Displacement vector r 
-\newcommand{\dvrhat}{
-  \ensuremath{\ve{\hat{\dvr}}}}	       % Displacement unit vector r 
 \newcommand{\cc}[1]{
   \ensuremath{#1^{\ast}}}               % Complex Conjugate
 \newcommand{\pd}[2]{
@@ -63,7 +65,7 @@
 
 \maketitle
 \begin{center}
-  \includegraphics[scale=0.7]{deed.png} 
+  \includegraphics[scale=0.7, natwidth=88 , natheight=31]{deed.png} 
 \end{center}
 
 \begin{multicols*}{2}
@@ -226,7 +228,7 @@ For a force in one dimension:
   m \dot{\ve{r}} \frac{d\dot{\ve{r}}}{d\ve{r}} &= \ve{F}(\ve{r}) \\
   \frac{1}{2}m |\dot{\ve{r}}|^2 &= E + \int_{\ve{r_0}}^{\ve{r}} \ve{F}(\ve{r}') \cdot d\ve{r}'
 \end{align*}
-We can then define \emph{potential energy}: 
+We can then define \emph{potential energy}:
 \begin{align*}
   U(\ve{r}) = - \int_{\ve{r_0}}^{\ve{r}} F(\ve{r}') \cdot d\ve{r}' 
 \end{align*}
