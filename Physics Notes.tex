@@ -1,6 +1,8 @@
-% Copyright (c) 2011-2013 by Chenyang Yuan. 
-% This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
-% http://creativecommons.org/licenses/by-sa/3.0/
+% Copyright (c) 2011-2013 by Chenyang Yuan.
+
+
+% This work is licensed under a Creative Commons Attribution-ShareAlike 3.0
+% Unported License.  http://creativecommons.org/licenses/by-sa/3.0/
 
 % For American-friendly paper
 \documentclass[11pt, letterpaper]{article} 
@@ -73,11 +75,8 @@
 \end{multicols*}
 %\pagebreak
 \newpage
-
 \begin{multicols*}{3}
-%%%%%%%%%%%%%%%%%
 \section{Measurement}
-%%%%%%%%%%%%%%%%%
 \subsection{Instrument Uncertainty}
 All instruments have uncertainties:
 \begin{enumerate}
@@ -85,13 +84,11 @@ All instruments have uncertainties:
 \item Digital Instruments: The smallest significant figure
 \item Human reaction time: $\pm 0.10$s
 \end{enumerate}
-%%%%%%%%%%%%%%%%%
 \subsection{Significant Figures}
 \begin{enumerate}
 \item Adding or subtracting: Follow term with least {\em decimal place}
 \item Multiplying or Dividing: Follow term with least {\em significant figure}
 \end{enumerate}
-%%%%%%%%%%%%%%%%%
 \subsection{Propagation of error}
 For any $f(a, \cdots)$ the general formula for $\Delta f$ is:
 \begin{align*}
@@ -105,14 +102,12 @@ Some specific examples:
   \end{align*}
 \item $f=ab$ or $f=\frac{a}{b}$
   \begin{align*}
-    \frac{\Delta f}{f} = \sqrt{\left(\frac{\Delta a}{a} \right)^2+\left(\frac{\Delta b}{b} \right)^2}
+    \frac{\Delta f}{f} = \sqrt{\left(\frac{\Delta a}{a}
+      \right)^2+\left(\frac{\Delta b}{b} \right)^2}
   \end{align*}
 \end{enumerate}
-%%%%%%%%%%%%%%%%%
 \section{Mechanics}
-%%%%%%%%%%%%%%%%%
 \subsection{Statics}
-%%%%%%%%%%%%%%%%%
 When all objects are motionless (or have constant velocity),
 \begin{align*}
   \sum{\ve{F}_{net}}&=0 \\
@@ -120,19 +115,21 @@ When all objects are motionless (or have constant velocity),
 \end{align*}
 Four basic forces to consider:
 \begin{description}
-\item[Tension] Pulling force felt by a rope, string, etc. Every piece of rope feels a pulling force in both directions.
+\item[Tension] Pulling force felt by a rope, string, etc. Every piece of rope
+  feels a pulling force in both directions.
 \item[Friction] Parallel to surface of contact, can be static or kinetic.
-\item[Normal] Perpendicular to surface of contact, prevents object from falling through surface.
-\item[Gravity] Force acting between two objects with mass. Always acts downwards for objects on surface of earth.
+\item[Normal] Perpendicular to surface of contact, prevents object from falling
+  through surface.
+\item[Gravity] Force acting between two objects with mass. Always acts downwards
+  for objects on surface of earth.
 \end{description}
 \subsection{Kinematics}
-%%%%%%%%%%%%%%%%%
 \begin{align*}
   \ve{v} &= \lim_{\Delta t \rightarrow 0} \frac{\Delta \ve{x}}{\Delta t} = \frac{d\ve{x}}{dt} = 	\ve{\dot{x}} \\
-  \ve{a} &= \frac{d\ve{v}}{dt} = \frac{d^2\ve{x}}{dt^2} = \ve{\dot{x}} = \ve{\ddot{x}} 
+  \ve{a} &= \frac{d\ve{v}}{dt} = \frac{d^2\ve{x}}{dt^2} = \ve{\dot{x}} =
+  \ve{\ddot{x}}
 \end{align*}
 \subsubsection{Polar Coordinates}
-%%%%%%%%%%%%%%%%%
 Differentiation of unit vectors:
 \begin{align*}
   \dot{\uve{r}} &= \dot{\theta} \uve{\theta}\\
@@ -142,10 +139,10 @@ Velocity and acceleration in polar form:
 \begin{align*}
   \ve{r} &= r\uve{r} \\
   \ve{v} &= \dot{\ve{r}} = \dot{r} \uve{r} + r \dot{\theta} \uve{\theta} \\
-  \ve{a} &= \dot{\ve{v}} = (\ddot{r} - \dot{\theta}^2 r) \uve{r} + (r \ddot{\theta} + 2 \dot{r} \dot{\theta})\uve{\theta}
+  \ve{a} &= \dot{\ve{v}} = (\ddot{r} - \dot{\theta}^2 r) \uve{r} + (r
+  \ddot{\theta} + 2 \dot{r} \dot{\theta})\uve{\theta}
 \end{align*}
 \subsection{Dynamics}
-%%%%%%%%%%%%%%%%%
 \begin{align*}
   \ve{F} &= m \ve{\ddot{x}} \\
   \ve{F}_{action} &= - \ve{F}_{reaction}
@@ -160,7 +157,7 @@ Solving differential equations in 1-dimension:
 \item $F=f(t)$
   \begin{align*}
     m \int_{v_0}^{v(t)} dv' &= \int_{t_0}^{t} f(t') dt' \\
-    m \int_{x_0}^{x(t)} dx' &= \int_{t_0}^{t} v(t') dt' 
+    m \int_{x_0}^{x(t)} dx' &= \int_{t_0}^{t} v(t') dt'
   \end{align*}
 \item $F=f(x)$
   \begin{align*}
@@ -173,7 +170,6 @@ Solving differential equations in 1-dimension:
   \end{align*}
 \end{enumerate}
 \subsubsection{Friction}
-%%%%%%%%%%%%%%%%%
 Kinetic and static friction:
 \begin{align*}
   \ve{f_k}&=\mu_k\ve{N} \\
@@ -181,8 +177,8 @@ Kinetic and static friction:
 \end{align*}
 Static friction does no work.
 \subsubsection{Constraining Forces}
-%%%%%%%%%%%%%%%%%
-For any rigid body, there are 6 degrees of freedom ($DF$). There can be constraining forces ($C$) acting on the body.
+For any rigid body, there are 6 degrees of freedom ($DF$). There can be
+constraining forces ($C$) acting on the body.
 \begin{itemize}
 \item Statics: $C+DF=6$
 \item Dynamics $C+DF \geq 6$
@@ -194,19 +190,20 @@ There are 3 assumptions made for a body moving without any constraint:
 \item $\ve{f}_{12} + \ve{f}_{21} = 0$
 \end{enumerate}
 \subsubsection{Fictitious Forces}
-%%%%%%%%%%%%%%%%%
-For any vector $\ve{A}$ in a moving frame, we calculate its time derivative in a frame rotating at $\omega$ respect to the stationary frame:
+For any vector $\ve{A}$ in a moving frame, we calculate its time derivative in a
+frame rotating at $\omega$ respect to the stationary frame:
 \begin{align*}
-  \frac{d\ve{A}}{dt}_{\text{stat}} = \frac{d\ve{A}}{dt}_{\text{mov}} + \ve{\omega} \times \ve{A}
+  \frac{d\ve{A}}{dt}_{\text{stat}} = \frac{d\ve{A}}{dt}_{\text{mov}} +
+  \ve{\omega} \times \ve{A}
 \end{align*}
 \noindent
-Let $\ve{r}$ be the position vector of the object in an accelerated frame and $\ve{R}$ be the vector to the origin of the accelerated frame, then the possible forces that acts on $\ve{r}$ in the moving frame are:
+Let $\ve{r}$ be the position vector of the object in an accelerated frame and
+$\ve{R}$ be the vector to the origin of the accelerated frame, then the possible
+forces that acts on $\ve{r}$ in the moving frame are:
 \begin{align*}
-  \frac{d^2\ve{r}}{dt ^2} = \frac{\ve{F}}{m}
-  &- \frac{d^2\ve{R}}{dt^2}
+  \frac{d^2\ve{r}}{dt ^2} = \frac{\ve{F}}{m} &- \frac{d^2\ve{R}}{dt^2}
   - \ve{\omega} \times (\ve{\omega}\times\ve{r})\\
-  &- 2\ve{\omega} \times \ve{v}
-  - \frac{d\ve{\omega}}{dt} \ve{r}
+  &- 2\ve{\omega} \times \ve{v} - \frac{d\ve{\omega}}{dt} \ve{r}
 \end{align*}
 \begin{enumerate}
 \item Translational force: $- m\frac{d^2\ve{R}}{dt^2}$
@@ -215,29 +212,29 @@ Let $\ve{r}$ be the position vector of the object in an accelerated frame and $\
 \item Azimuthal force: $-m \frac{d\ve{\omega}}{dt} \ve{r}$
 \end{enumerate}
 \subsection{Conservation Laws}
-%%%%%%%%%%%%%%%%%
 \begin{description}
 \item[Energy] $W_{NC} = 0$
-\item[Momentum] $\Sigma \ve{F}_{net} = 0$ 
-\item[Angular Momentum] $\Sigma \ve{\tau}_{net} = 0$ 
+\item[Momentum] $\Sigma \ve{F}_{net} = 0$
+\item[Angular Momentum] $\Sigma \ve{\tau}_{net} = 0$
 \end{description}
 \subsection{Energy}
-%%%%%%%%%%%%%%%%%
 For a force in one dimension:
 \begin{align*}
   m \dot{\ve{r}} \frac{d\dot{\ve{r}}}{d\ve{r}} &= \ve{F}(\ve{r}) \\
-  \frac{1}{2}m |\dot{\ve{r}}|^2 &= E + \int_{\ve{r_0}}^{\ve{r}} \ve{F}(\ve{r}') \cdot d\ve{r}'
+  \frac{1}{2}m |\dot{\ve{r}}|^2 &= E + \int_{\ve{r_0}}^{\ve{r}} \ve{F}(\ve{r}')
+  \cdot d\ve{r}'
 \end{align*}
 We can then define \emph{potential energy}:
 \begin{align*}
-  U(\ve{r}) = - \int_{\ve{r_0}}^{\ve{r}} F(\ve{r}') \cdot d\ve{r}' 
+  U(\ve{r}) = - \int_{\ve{r_0}}^{\ve{r}} F(\ve{r}') \cdot d\ve{r}'
 \end{align*}
 Work-Energy theorem:
 \begin{align*}
   W_{AB} &= \int_{\ve{r_1}}^{\ve{r_2}} F(\ve{r}') \cdot d\ve{r}' \\
   W_{\text{total}} &= \Delta KE
 \end{align*}
-Conservative forces are forces that only depend on {\em position}. For conservative forces:
+Conservative forces are forces that only depend on {\em position}. For
+conservative forces:
 \begin{align*}
   \oint \ve{F} \cdot d\ve{r} &= 0 \\
   \ve{\nabla} \times \ve{F} &= 0 \\
@@ -249,8 +246,19 @@ For non-conservative forces:
   W_{NC} = \Delta(K+U) = \Delta E
 \end{align*}
 Where $E$ is defined as the mechanical energy of the system.
+\subsubsection{Virial Theorem}
+If we have a collection of particles at positions $\ve{r}_i$, and each of them
+experiences a force $\ve{F}_i$, their average kinetic energy is given by:
+\begin{align*}
+  \langle T \rangle &= -\frac{1}{2} \left\langle \sum \ve{F}_i \cdot \ve{r}_i
+  \right\rangle
+\end{align*}
+For one particle:
+\begin{align*}
+  \langle T \rangle &= -\frac{1}{2} \left\langle \frac{dU}{dr} \cdot \ve{r}
+  \right\rangle
+\end{align*}
 \subsubsection{Power}
-%%%%%%%%%%%%%%%%%
 Power is the rate of work done per unit time:
 \begin{align*}
   P=\frac{dW}{dt}
@@ -261,7 +269,6 @@ Mechanical power:
   &=\ve{F} \cdot \ve{v}
 \end{align*}
 \subsection{Momentum}
-%%%%%%%%%%%%%%%%%
 Momentum is defined as:
 \begin{align*}
   \ve{p} = m \ve{v}
@@ -276,65 +283,133 @@ Impulse is defined as:
   \Imp &= \int_{t_1}^{t_2} \ve{F}(t) dt = \int_{t_1}^{t_2} \frac{d\ve{p}}{dt} dt \\
   \Imp &= \ve{p}(t_2) - \ve{p}(t_1) = \Delta \ve{p}
 \end{align*}
-For perfectly elastic collisions of two objects in 1-D, relative velocity is constant. 
+For perfectly elastic collisions of two objects in 1-D, relative velocity is
+constant.
 \begin{align*}
   \ve{v}_1 - \ve{v}_2 = - (\ve{v}'_1 - \ve{v}'_2)
 \end{align*}
 For other collisions in 1-D, we have the coefficient of restitution $e$:
 \begin{align*}
-  e = -\frac{\ve{v}'_2 - \ve{v}'_1}{\ve{v}_2 - \ve{v}_1} \qquad 0 \leq e \leq  1
+  e = -\frac{\ve{v}'_2 - \ve{v}'_1}{\ve{v}_2 - \ve{v}_1} \qquad 0 \leq e \leq 1
 \end{align*}
 \subsection{Lagrangian Mechanics}
-%%%%%%%%%%%%%%%%%
 The Lagrangian method is based on the \emph{principle of stationary action}.
 \begin{align*}
   \Lagr(\dot{x},x,t) = T - V \\
   \frac{d}{dt}\left( \pd{\Lagr}{\dot{x}} \right) - \pd{\Lagr}{x} = 0
 \end{align*}
+\subsubsection{Multiple Coordinates}
+If we have a Lagrangian in $n$ coordinates $\Lagr(t, q_1, \dot{q_1}, \cdots,
+q_n, \dot{q_n})$, we simply get $n$ Euler-Lagrange equations:
+\begin{align*}
+  \frac{d}{dt}\left( \pd{\Lagr}{\dot{q}_i} \right) = \pd{\Lagr}{q_i}
+\end{align*}
+\subsubsection{Forces of Constraint}
+If we have an equation of constraint $f(\ve{x}) = 0$, we can use Lagrange
+multipliers to get the equations of motion, and along with the constraint
+equations solve for $\lambda$:
+\begin{align*}
+  \pd{\Lagr}{x_i} + \lambda \pd{f}{x_i} = \frac{d}{dt} \left(
+    \pd{\Lagr}{\dot{x}_i} \right)
+\end{align*}
+The the forces of constraint are:
+\begin{align*}
+  F_i^c = \lambda \pd{f}{x_i}
+\end{align*}
+\subsubsection{Conservation of Energy}
+If we take the total time derivative of the Lagrangian, we get:
+\begin{align*}
+  \frac{d\Lagr}{dt} = \pd{\Lagr}{t} + \ddot{q}_i\pd{\Lagr}{\dot{q}_i} +
+  \dot{q}_i \frac{d}{dt} \left( \pd{\Lagr}{\dot{q}_i} \right)  
+\end{align*}
+If the Lagrangian is explicitly independent of time, we have the following conserved quantity, which is the energy of the system:
+\begin{align*}
+  \frac{d}{dt} \left[ \dot{q}_i \pd{\Lagr}{\dot{q}_i} - \Lagr \right] = 0
+\end{align*}
+\subsubsection{Noether's Theorem}
+A ``symmetry'' is a change of coordinates that does not result in a first order
+change in the Lagrangian. For each symmetry, there is a conserved quantity. If
+the Lagrangian is invariant in first order under the change of coordinates:
+\begin{align*}
+  q_i \rightarrow q_i + \epsilon K_i (q)
+\end{align*}
+The following quantity is conserved:
+\begin{align*}
+  \frac{d}{dt} \left[ K_i(q) \pd{\Lagr}{\dot{q_i}} \right]
+\end{align*}
 \subsection{Hamiltonian Mechanics}
-The Hamiltonian $\Hami$ can be used for the conservation of energy:
+The Hamiltonian $\Hami(\ve{p},\ve{q},t)$ for multiple coordinates is defined as:
 \begin{align*}
-  \Hami(\dot{x},x,t) &= T + V \\
-  \dot{\Hami}&=0
+  \Hami &= p_i \dot{q}_i - \Lagr(\ve{q}, \dot{\ve{q}}, t) \\
+  p_i &= \pd{\Lagr}{\dot{q}_i}
 \end{align*}
-Where $T$ is the kinetic energy, and $V$ is the potential energy of the system.
+The following equations of motion can then be obtained:
+\begin{align*}
+  \pd{\Hami}{q_i} &= -\dot{p}_i \\
+  \pd{\Hami}{p_i} &= \dot{q}_i \\
+  \pd{\Hami}{t} &= - \pd{\Lagr}{t}
+\end{align*}
+\subsubsection{Liouville's Theorem}
+The Hamiltonian formulation gives two first order ordinary differential
+equations, which can always be uniquely solved when given initial conditions
+$(\ve{p}_0, \ve{q}_0)$. Thus no two phase space orbits with different initial
+conditions cross, and consequently any volume in phase space is constant under
+time evolution.
+\subsubsection{Poisson Brackets}
+The Poisson bracket binary operation is defined as:
+\begin{align*}
+  \{ f(p, q, t), g(p, q, t) \} = \pd{f}{q}\pd{g}{p} - \pd{f}{p}\pd{g}{q}  
+\end{align*}
+If $p$ and $q$ are the solutions to Hamiltonian's equations:
+\begin{align*}
+  \dot{q} &= \{q, \Hami \} \\
+  \dot{p} &= \{p, \Hami \} \\
+  \frac{d}{dt} f(p, q, t) &= \{f, \Hami\} + \pd{f}{t}
+\end{align*}
 \subsection{Central Forces}
-%%%%%%%%%%%%%%%%%
-For any particle subjected to a central force,
+For any two objects subject to a central force,
 \begin{align*}
-  F(r) &= m \ddot{r} - m r \dot{\theta}^2\\
-  L &= mr^2\dot{\theta}
+  F(r) &= \mu \ddot{r} - \mu r \dot{\theta}^2\\
+  L &= \mu r^2\dot{\theta}
 \end{align*}
-Because angular momentum $L$ is constant, we can look at central forces systems in 1-dimension.
+Where $\mu = (m_1 m_2)/(m_1 + m_2)$ is their reduced mass. Because angular
+momentum $L$ is constant, we can look at central forces systems in 1-dimension.
 \begin{align*}
-  V_{\text{eff}}(r) &= \frac{L^2}{2mr^2} + V(r) \\
-  E &= V_{\text{eff}} + \frac{1}{2} m \dot{r}^2
+  V_{\text{eff}}(r) &= \frac{L^2}{2 \mu r^2} + V(r) \\
+  E &= V_{\text{eff}} + \frac{1}{2} \mu \dot{r}^2
+\end{align*}
+If we let $q(\theta) = \frac{1}{r}$, we get the following equation in polar
+coordinates:
+\begin{align*}
+  q''(\theta) + q(\theta) + \frac{\mu}{L^2 q^2} F(r) = 0
 \end{align*}
 \subsubsection{Gravity}
-%%%%%%%%%%%%%%%%%
-For any two point masses of $m_1$ and $m_2$ in empty space, the gravitational force between them is:
+For any two point masses of $m_1$ and $m_2$ in empty space, the gravitational
+force between them is:
 \begin{align*}
   \ve{F}=\frac{Gm_1m_2}{|\ve{r}|^2}\uve{r}
 \end{align*}
-Where $\ve{r}$ is the position vector of one mass respect to the other, and $G$ is the gravitational constant.
+Where $\ve{r}$ is the position vector of one mass respect to the other, and $G$
+is the gravitational constant.
 \begin{align*}
   F=mg
 \end{align*}
-\noindent For a mass $m$ at the Earth's surface, where $g=9.81m/s^2$ pointing downwards.
+\noindent For a mass $m$ at the Earth's surface, where $g=9.81m/s^2$ pointing
+downwards.
 \subsection{Uniform Circular Motion}
 For a point mass moving in uniform circular motion, we define:
 \begin{align*}
   \omega=\frac{v}{r}
 \end{align*}
-The centripetal acceleration $a$ and the force required to keep the object in its circular path:
+The centripetal acceleration $a$ and the force required to keep the object in
+its circular path:
 \begin{align*}
   a&=\frac{v^2}{r}=\omega^2r\\
   F&=\frac{mv^2}{r}=m\omega^2r
 \end{align*}
-\subsection{\texorpdfstring{Rotational Dynamics (Constant $\uve{L}$)}{Rotational Dynamics (Constant Direction of L)}} %Prevents \hyperref error
-%%%%%%%%%%%%%%%%%
+\subsection{\texorpdfstring{Rotational Dynamics (Constant $\uve{L}$)}{Rotational
+    Dynamics (Constant Direction of L)}} %Prevents \hyperref error
 \subsubsection{Angular Momentum}
-%%%%%%%%%%%%%%%%%
 The angular momentum of a point mass is defined as:
 \begin{align*}
   \ve{L}=\ve{r}\times\ve{p}
@@ -343,7 +418,8 @@ For a flat object lying on a 2-D plane rotating with angular speed $\omega$:
 \begin{align*}
   \ve{L}=\int\ve{r}\times\ve{p}=\int r^2\omega \uve{z}dm
 \end{align*}
-If we define the {\em moment of intertia} about the $z$-axis to be $I_z=\int (x^2+y^2)dm$, we have:
+If we define the {\em moment of intertia} about the $z$-axis to be $I_z=\int
+(x^2+y^2)dm$, we have:
 \begin{align*}
   L_z&=I_z\omega\\
   T&=\int\frac{1}{2}m\ve{v}^2=\int\frac{r^2\omega^2}{2}dm\\
@@ -351,14 +427,12 @@ If we define the {\em moment of intertia} about the $z$-axis to be $I_z=\int (x^
 \end{align*}
 For the $z$-component of $\ve{L}$ and kinetic energy $T$.
 \subsubsection{General Motion}
-%%%%%%%%%%%%%%%%%
 For an object with a moving center of mass, and rotating at $\omega$ about it, 
 \begin{align*}
   \ve{L}&=\ve{r_\text{CM}}\times\ve{p_\text{CM}}+I_\text{CM}\omega \uve{z}\\
   T&=\frac{1}{2}mv_\text{CM}^2+\frac{1}{2}I_\text{CM}\omega^2
 \end{align*}
 \subsubsection{Torque}
-%%%%%%%%%%%%%%%%%
 Torque is defined as:
 \begin{align*}
   \ve{\tau}=\ve{r}\times\ve{F}
@@ -367,7 +441,8 @@ Using an origin satisfying any of the following conditions to calculate $\ve{L}$
 \begin{enumerate}
 \item The origin is the center of mass
 \item The origin is not accelerating
-\item $(\ve{R}-\ve{r_0})$ is parallel to $\ve{r_0}$, the position of the origin in a fixed coordinate system
+\item $(\ve{R}-\ve{r_0})$ is parallel to $\ve{r_0}$, the position of the origin
+  in a fixed coordinate system
 \end{enumerate}
 \begin{align*}
   \frac{d\ve{L}}{dt}=\sum \ve{\tau_\text{ext}}
@@ -378,36 +453,35 @@ When there is no external torque, we have the conservation of angular momentum.
 \end{align*}
 Where $\alpha=\frac{d\omega}{dt}$ is the angular acceleration. 
 \subsubsection{Angular Impulse}
-%%%%%%%%%%%%%%%%%
 Angular impulse is defined as:
 \begin{align*}
   \Imp_\theta=\int_{t_1}^{t_2}\ve{\tau}(t)dt=\Delta\ve{L}
 \end{align*}
-If we have a force $\ve{F}(t)$ applied at a constant distance $R$ from the origin,
+If we have a force $\ve{F}(t)$ applied at a constant distance $R$ from the
+origin,
 \begin{align*}
   \ve{\tau}(t)&=\ve{R}\times\ve{F}(t) \\
   \Imp_\theta&=\ve{R}\times\Imp \\
   \Delta\ve{L}&=\ve{R}\times(\Delta\ve{p})
 \end{align*}
 \subsubsection{Parallel-axis Theorem}
-%%%%%%%%%%%%%%%%%
-Let an object of mass $M$ rotate about its center of mass with the same frequency $\omega$ as the center of mass rotates about the origin (with radius $R$):
+Let an object of mass $M$ rotate about its center of mass with the same
+frequency $\omega$ as the center of mass rotates about the origin (with radius
+$R$):
 \begin{align*}
   L_z=(MR^2+I_\text{CM})\omega
 \end{align*}
-Thus if the moment of inertia of an object is $I_0$ about a particular axis, its moment of inertia about a parallel axis separated by $R$ is:
+Thus if the moment of inertia of an object is $I_0$ about a particular axis, its
+moment of inertia about a parallel axis separated by $R$ is:
 \begin{align*}
   I=MR^2+I_0
 \end{align*}
 \subsubsection{Perpendicular-axis Theorem}
-%%%%%%%%%%%%%%%%%
 For flat 2-D objects in the $x$-$y$ plane, and orthogonal axes $x$, $y$ and $z$:
-
 \begin{align*}
   I_z=I_x+I_y
 \end{align*}
 \subsubsection{Moments of Inertia}
-%%%%%%%%%%%%%%%%%
 Center of mass for an object of mass $M$:
 \begin{align*}
   \ve{R_\text{CM}}=\frac{\int\ve{r}dm}{M}
@@ -422,24 +496,25 @@ Common moments of inertia (taken about center of mass unless stated):
 \item Hollow sphere with radius $r$: $\frac{2}{3}mr^2$
 \item Solid sphere with radius $r$: $\frac{2}{5}mr^2$
 \end{enumerate}
-
 \subsection{General Rotational Motion}
-%%%%%%%%%%%%%%%%%
-For any body moving in space, its motion can be written as a sum of its translational motion and a rotation about an axis at a particular time. 
-
+For any body moving in space, its motion can be written as a sum of its
+translational motion and a rotation about an axis at a particular time.
 \subsubsection{Angular Velocity}
-%%%%%%%%%%%%%%%%%
-The angular velocity vector $\ve{\omega}$ points along the axis of rotation, with a  magnitude equal to its angular speed. Its direction is determined by convention of the right hand rule. For an object rotating at $\ve{\omega}$, the velocity of a point at $\ve{r}$ is:
+The angular velocity vector $\ve{\omega}$ points along the axis of rotation,
+with a magnitude equal to its angular speed. Its direction is determined by
+convention of the right hand rule. For an object rotating at $\ve{\omega}$, the
+velocity of a point at $\ve{r}$ is:
 \begin{align*}
   \ve{v} = \ve{\omega} \times \ve{r}
 \end{align*}
-Angular velocities add like vectors. Let $S_1$, $S_2$ and $S_3$ be coordinate systems. If $S_1$ rotates with $\ve{\omega}_{1, 2}$ with respect to $S_2$, and $S_2$ rotates with $\ve{\omega}_{2, 3}$ with respect to $S_3$, then $S_1$ rotates instantaneously with respect to $S_3$ at: 
+Angular velocities add like vectors. Let $S_1$, $S_2$ and $S_3$ be coordinate
+systems. If $S_1$ rotates with $\ve{\omega}_{1, 2}$ with respect to $S_2$, and
+$S_2$ rotates with $\ve{\omega}_{2, 3}$ with respect to $S_3$, then $S_1$
+rotates instantaneously with respect to $S_3$ at:
 \begin{align*}
   \ve{\omega}_{1, 3} = \ve{\omega}_{1, 2} + \ve{\omega}_{2, 3}
 \end{align*}
-
 \subsubsection{Angular Momentum}
-%%%%%%%%%%%%%%%%%
 \begin{align*}
   \ve{L} &= \int \ve{r} \times (\ve{\omega} \times \ve{r}) dm \\
   &= \tensor{I} \ve{\omega}
@@ -460,7 +535,8 @@ The kinetic energy of the object is given by:
   T &= \int\frac{1}{2} ||\ve{\omega} \times \ve{r}||^2 dm \\
   &= \frac{1}{2} \ve{\omega} \cdot \tensor{I}\ve{\omega} = \frac{1}{2} \ve{\omega} \cdot \ve{L}
 \end{align*}
-To find the angular momentum for an object of mass $M$ in general motion, let the position of its center of mass be $\ve{R}$, its velocity be $\ve{V}$. Then:
+To find the angular momentum for an object of mass $M$ in general motion, let
+the position of its center of mass be $\ve{R}$, its velocity be $\ve{V}$. Then:
 \begin{align*}
   \ve{L} = M(\ve{R} \times \ve{V}) + \ve{L}_{\text{CM}}
 \end{align*}
@@ -468,23 +544,21 @@ The kinetic energy of the object is:
 \begin{align*}
   T = \frac{1}{2}MV^2 + \frac{1}{2}\ve{\omega}' \ve{L}_{\text{CM}}
 \end{align*}
-Where $\ve{\omega}'$ and $\ve{L}_{\text{CM}}$ are measured about the center of mass along axes parallel to the fixed-frame axes.
-
+Where $\ve{\omega}'$ and $\ve{L}_{\text{CM}}$ are measured about the center of
+mass along axes parallel to the fixed-frame axes.
 \subsubsection{Principal Axes}
-%%%%%%%%%%%%%%%%%
-A principal axis is an axis of rotation $\uve{\omega}$ such that $\tensor{I}\uve{\omega} = I\uve{\omega}$. An object can rotate about a principal axis at constant angular velocity with no external torque. An orthonormal set of principle axis exists for every object.
-
+A principal axis is an axis of rotation $\uve{\omega}$ such that
+$\tensor{I}\uve{\omega} = I\uve{\omega}$. An object can rotate about a principal
+axis at constant angular velocity with no external torque. An orthonormal set of
+principle axis exists for every object.
 \section{Special Relativity}
-%%%%%%%%%%%%%%%%%
 \subsection{Postulates}
 \begin{enumerate}
 \item The speed of light has the same value in all inertial frames
 \item Physical laws remain the same in all inertial frames
 \end{enumerate}
 \subsection{Kinematics}
-%%%%%%%%%%%%%%%%%
 \subsubsection{Lorentz Transform}
-%%%%%%%%%%%%%%%%%
 \begin{align*}
   x&= \gamma (x' + \beta ct') \\
   y&=y' \\
@@ -493,7 +567,6 @@ A principal axis is an axis of rotation $\uve{\omega}$ such that $\tensor{I}\uve
 \end{align*}
 Where $\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$ and $\beta = \frac{v}{c}$.
 \subsubsection{Fundamental Effects}
-%%%%%%%%%%%%%%%%%
 \begin{description}
   \setlength{\itemsep}{2.5mm}
 \item[Length contraction]
@@ -510,29 +583,35 @@ Where $\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$ and $\beta = \frac{v}{c}$.
   \begin{align*}
     \Delta t = \frac{Lv}{c^2}
   \end{align*}
-  Two events separated by $L$ and $\Delta t$ in the rest frame will appear simultaneous to an observer moving at $v$.
+  Two events separated by $L$ and $\Delta t$ in the rest frame will appear
+  simultaneous to an observer moving at $v$.
 \item[Longitudinal velocity addition]
   \begin{align*}
     v_x'=\frac{u+v}{1+uv/c^2}
   \end{align*}
-  Where $u$ is the velocity of an object in the frame traveling at $v$ respect to the lab frame, and $v_x'$ is the $x$-velocity of the object viewed by the lab frame.
+  Where $u$ is the velocity of an object in the frame traveling at $v$ respect
+  to the lab frame, and $v_x'$ is the $x$-velocity of the object viewed by the
+  lab frame.
 \item[Transverse velocity addition]
   \begin{align*}
     v_y'=\frac{u_y}{\gamma_v ( 1+ u_xv/c^2)}
   \end{align*}
-  Where $u_y$ and $u_x$ are velocity components of an object in the frame traveling at $v$ respect to the lab frame, and $v_y'$ is the $y$-velocity of the object viewed by the lab frame.
+  Where $u_y$ and $u_x$ are velocity components of an object in the frame
+  traveling at $v$ respect to the lab frame, and $v_y'$ is the $y$-velocity of
+  the object viewed by the lab frame.
 \item[Longitudinal Doppler effect]
   \begin{align*}
     f'=f\sqrt{\frac{1+\beta}{1-\beta}}
   \end{align*}
-  Where $f'$ is the frequency observed of a moving source emitting at frequency $f$ in its rest frame.
+  Where $f'$ is the frequency observed of a moving source emitting at frequency
+  $f$ in its rest frame.
 \end{description}
 \subsubsection{Minkowski Diagrams}
-%%%%%%%%%%%%%%%%%
 Space-time diagrams with $x$ and $ct$ axes. Some properties are:
 \begin{enumerate}
 \item Light travels at $\ang{45}$ to horizontal.
-\item $x'$ and $ct'$ axes of another moving frame are $\theta$ to the $x$ and $ct$ axes respectively, with
+\item $x'$ and $ct'$ axes of another moving frame are $\theta$ to the $x$ and
+  $ct$ axes respectively, with
   \begin{align*}
     \tan(\theta)=\beta
   \end{align*}
@@ -542,14 +621,11 @@ Space-time diagrams with $x$ and $ct$ axes. Some properties are:
   \end{align*}
 \end{enumerate}
 \subsection{Dynamics}
-%%%%%%%%%%%%%%%%%
 \subsubsection{Momentum}
-%%%%%%%%%%%%%%%%%
 \begin{align*}
   \ve{p}=\gamma_vm\ve{v}=\frac{m\ve{v}}{\sqrt{1-\frac{v^2}{c^2}}}
 \end{align*}
 \subsubsection{Energy}
-%%%%%%%%%%%%%%%%%
 \begin{align*}
   E^2=p^2c^2+m^2c^4
 \end{align*}
@@ -562,7 +638,6 @@ For massless particles(such as photons):
   E=pc=\frac{hc}{\lambda}
 \end{align*}
 \subsection{4-vectors}
-%%%%%%%%%%%%%%%%%
 A 4-vector $\fve{A}=(A_1,A_2,A_3,A_4)$ is a quantity that transforms as follows:
 \begin{align*}
   A_1'&= \gamma(A_1+i\beta A_4)\\
@@ -575,19 +650,17 @@ The dot product of two 4-vectors is invariant under Lorentz transformations:
   \fve{A}\cdot\fve{B}=\fve{A'}\cdot\fve{B'}
 \end{align*}
 \subsubsection{Different 4-vectors}
-%%%%%%%%%%%%%%%%%
 \begin{description}
   \setlength{\itemsep}{-2mm}
 \item[4-position] $(dx, dy, dz, icdt)$
-
   4-vectors originate from the invariant interval $ds$.
   \begin{align*}
     \fve{ds}^2&=(dx, dy, dz, icdt)^2 \\
     &=dx^2+dy^2+dz^2-c^2dt^2
   \end{align*}
 \item[4-velocity] $\gamma_v(\ve{v},ic)$
-
-  To obtain other 4-vectors, we can multiply invariant quantities to the 4-position vector, such as proper time:
+  To obtain other 4-vectors, we can multiply invariant quantities to the
+  4-position vector, such as proper time:
   \begin{align*}
     d\tau&=\frac{dt}{\gamma}\\
     \fve{v}&=\frac{ds}{d\tau}\\
@@ -595,8 +668,7 @@ The dot product of two 4-vectors is invariant under Lorentz transformations:
     &=\gamma_v(\ve{v},ic)
   \end{align*}
 \item[4-momentum] $\left(\ve{p},i\frac{E}{c}\right)$
-
-  As mass is invariant, 
+  As mass is invariant,
   \begin{align*}
     \fve{p}&=m\fve{v}\\
     &=(\gamma_vm\ve{v},i\gamma_vmc)\\
@@ -607,7 +679,6 @@ The dot product of two 4-vectors is invariant under Lorentz transformations:
     \fve{p}=\left(\frac{h}{\lambda},0,0,i\frac{h}{\lambda}\right)
   \end{align*}
 \item[4-wave] $\left(\ve{k},i\frac{\omega}{c}\right)$
-
   For electromagnetic waves,
   \begin{align*}
     k&=\frac{2\pi}{\lambda}=\frac{\omega}{c}\\
@@ -622,11 +693,8 @@ The dot product of two 4-vectors is invariant under Lorentz transformations:
     &=\gamma_v\left(\ve{f},\frac{d}{dt}\left(i\frac{E}{c}\right)\right)
   \end{align*}
 \end{description}
-
 \section{Electricity and Magnetism}
-%%%%%%%%%%%%%%%%%
 \subsection{Electrostatics}
-%%%%%%%%%%%%%%%%%
 \begin{description}
 \item[Coulomb's law] The force between a point charge $q$ and test charge $Q$:
   \begin{align*}
@@ -636,26 +704,28 @@ The dot product of two 4-vectors is invariant under Lorentz transformations:
     \ve{F} =\frac{1}{4\pi\epsilon_0}\frac{Qq}{\dr^2}\dvrhat
     }
   \end{align*}
-  Where $\dvr=\ve{r}-\ve{r'}$ is the displacement vector from $Q$ at $\ve{r}$ and $q$ at $\ve{r'}$.
-\item[Superposition principle] The interaction between any two charges is unaffected by any other charges
+  Where $\dvr=\ve{r}-\ve{r'}$ is the displacement vector from $Q$ at $\ve{r}$
+  and $q$ at $\ve{r'}$.
+\item[Superposition principle] The interaction between any two charges is
+  unaffected by any other charges
 \end{description}
-
 \subsubsection{Electric Field}
-%%%%%%%%%%%%%%%%%
 The electric field of a point charge is defined as:
 \begin{align*}
   \iftoggle{cgs}{
-  \ve{E}=\frac{\ve{F}}{Q}=\frac{q}{\dr^2}\dvrhat
+    \ve{E}=\frac{\ve{F}}{Q}=\frac{q}{\dr^2}\dvrhat
   }{
-  \ve{E}=\frac{\ve{F}}{Q}=\frac{1}{4\pi\epsilon_0}\frac{q}{\dr^2}\dvrhat
+    \ve{E}=\frac{\ve{F}}{Q}=\frac{1}{4\pi\epsilon_0}\frac{q}{\dr^2}\dvrhat
   }
 \end{align*}
-For a continuous volume charge distribution $\rho(\ve{r'})$, we can use the superposition principle to get:
+For a continuous volume charge distribution $\rho(\ve{r'})$, we can use the
+superposition principle to get:
 \begin{align*}
   \iftoggle{cgs}{
-  \ve{E}(\ve{r}) = \int_\mathcal{V} \frac{\rho(\ve{r'})} {\dr^2} \dvrhat d\tau'
+    \ve{E}(\ve{r}) = \int_\mathcal{V} \frac{\rho(\ve{r'})} {\dr^2} \dvrhat d\tau'
   }{
-  \ve{E}(\ve{r}) = \frac{1}{4\pi\epsilon_0} \int_\mathcal{V} \frac{\rho(\ve{r'})} {\dr^2} \dvrhat d\tau'
+    \ve{E}(\ve{r}) = \frac{1}{4\pi\epsilon_0} \int_\mathcal{V}
+    \frac{\rho(\ve{r'})} {\dr^2} \dvrhat d\tau'
   }
 \end{align*}
 Taking the divergence of $\ve{E}$, we get Gauss' law:
@@ -673,25 +743,27 @@ Taking the curl of $\ve{E}$:
   \ve{\nabla}\times\ve{E}&=0\\
   \oint\ve{E}\cdot d\ve{l}&=0
 \end{align*}
-For any surface charge in an electric field $\ve{E}$, the field felt by an area element on the surface is:
+For any surface charge in an electric field $\ve{E}$, the field felt by an area
+element on the surface is:
 \begin{align*}
   \ve{E}_\text{felt}=\frac{1}{2}\left(\ve{E}_\text{above}+\ve{E}_\text{below}\right)
 \end{align*}
 \subsubsection{Electric Potential}
-%%%%%%%%%%%%%%%%%
-As the line integral of the electrostatic field is path independent, we can define the potential at a point $\ve{r}$:
+As the line integral of the electrostatic field is path independent, we can
+define the potential at a point $\ve{r}$:
 \begin{align*}
   V(\ve{r})=-\int_{\mathcal{O}}^{\ve{r}}\ve{E}\cdot d\ve{l}
 \end{align*}
-Where $\mathcal{O}$ is a standard reference point, usually set to infinity. The potential of a point charge can then be found, and with the superposition principle we can find the potential of any charge distribution:
+Where $\mathcal{O}$ is a standard reference point, usually set to infinity. The
+potential of a point charge can then be found, and with the superposition
+principle we can find the potential of any charge distribution:
 \begin{align*}
   \iftoggle{cgs}{
-  V&=\frac{q}{\dr}\\
-  V(\ve{r})&=\int_\mathcal{V}\frac{\rho(\ve{r'})}{\dr} d\tau'
-  }{
-  V&=\frac{1}{4\pi\epsilon_0}\frac{q}{\dr}\\
-  V(\ve{r})&=\frac{1}{4\pi\epsilon_0}\int_\mathcal{V}\frac{\rho(\ve{r'})}{\dr} d\tau'
-  }
+    V&=\frac{q}{\dr}\\
+    V(\ve{r})&=\int_\mathcal{V}\frac{\rho(\ve{r'})}{\dr} d\tau' }{
+    V&=\frac{1}{4\pi\epsilon_0}\frac{q}{\dr}\\
+    V(\ve{r})&=\frac{1}{4\pi\epsilon_0}\int_\mathcal{V}\frac{\rho(\ve{r'})}{\dr}
+    d\tau' }
 \end{align*}
 Taking the gradient of the potential:
 \begin{align*}
@@ -702,9 +774,7 @@ Taking the gradient of the potential:
   \nabla^2V&=-\frac{\rho}{\epsilon_0}
   }
 \end{align*}
-
 \subsubsection{Work and Energy}
-%%%%%%%%%%%%%%%%%
 The work needed to bring a charge $Q$ from infinity to a point $\ve{a}$ is:
 \begin{align*}
   W&=\int_{\infty}^{\ve{a}} \ve{F}\cdot d\ve{l}\\
@@ -722,14 +792,15 @@ The energy in a continuous charge distribution is:
 \end{align*}
 Where the integral is taken over all space.
 \subsubsection{Conductors}
-%%%%%%%%%%%%%%%%%
 A perfect conductor has an unlimited supply of free charges. 
 \begin{enumerate}
 \item $\ve{E}=0$ and $\rho = 0$ inside a conductor
 \item Any conductor is an equipotential
 \item Just outside a conductor, $\ve{E}$ is perpendicular to the surface.
 \end{enumerate}
-If we charge up two conductors with $+Q$ and $-Q$, the potential between them is proportional to the charge $Q$ (because the electric field is proportional to $Q$), and we define the constant of proportionality capacitance:
+If we charge up two conductors with $+Q$ and $-Q$, the potential between them is
+proportional to the charge $Q$ (because the electric field is proportional to
+$Q$), and we define the constant of proportionality capacitance:
 \begin{align*}
   C=\frac{Q}{V}
 \end{align*}
@@ -739,25 +810,30 @@ The work done by charging a capacitor is:
   &=\frac{1}{2}CV^2
 \end{align*}
 \subsubsection{Image Charges}
-%%%%%%%%%%%%%%%%%
-In certain special cases, a charge placed next to a grounded conductor has equivalents.
+In certain special cases, a charge placed next to a grounded conductor has
+equivalents.
 \begin{enumerate}
-\item A point charge and a conducting sheet: An opposite charge in the mirror image position.
-\item A point charge and a conducting sphere, or an infinite line charge and conducting cylinder: Opposite image charge and charge forms the Apollonius sphere/cylinder.
+\item A point charge and a conducting sheet: An opposite charge in the mirror
+  image position.
+\item A point charge and a conducting sphere, or an infinite line charge and
+  conducting cylinder: Opposite image charge and charge forms the Apollonius
+  sphere/cylinder.
 \end{enumerate}
 \subsubsection{Uniqueness Theorems}
-%%%%%%%%%%%%%%%%%
 \begin{description}
-\item[First uniqueness theorem] The solution to Laplace's equation ($\nabla^2V=0$) in some volume $\mathcal{V}$ is uniquely determined if $V$ is specified on the boundary surface $\mathcal{S}$. 
-\item[Second uniqueness theorem] In a volume $\mathcal{V}$ surrounded by conductors and containing a specified charge density $\rho$, the electric field is uniquely determined if the total charge on each conductor is given. 
+\item[First uniqueness theorem] The solution to Laplace's equation
+  ($\nabla^2V=0$) in some volume $\mathcal{V}$ is uniquely determined if $V$ is
+  specified on the boundary surface $\mathcal{S}$.
+\item[Second uniqueness theorem] In a volume $\mathcal{V}$ surrounded by
+  conductors and containing a specified charge density $\rho$, the electric
+  field is uniquely determined if the total charge on each conductor is given.
 \end{description}
 \subsection{Magnetostatics}
-%%%%%%%%%%%%%%%%%
 \subsubsection{Lorentz Force Law}
-%%%%%%%%%%%%%%%%%
 The force felt by:
 \begin{enumerate}
-\item A point charge $q$ moving at velocity $\ve{v}$ through a magnetic field $\ve{B}$:
+\item A point charge $q$ moving at velocity $\ve{v}$ through a magnetic field
+  $\ve{B}$:
   \begin{align*}
     \iftoggle{cgs}{
     \ve{F}=\frac{q}{c}\ve{v}\times\ve{B}
@@ -783,7 +859,6 @@ The force felt by:
   \end{align*}
 \end{enumerate}
 \subsubsection{Biot-Savart Law}
-%%%%%%%%%%%%%%%%%
 The magnetic field created by a steady line current:
 \begin{align*}
   \iftoggle{cgs}{
@@ -793,7 +868,6 @@ The magnetic field created by a steady line current:
   }
 \end{align*}
 \subsubsection{Magnetic Fields}
-%%%%%%%%%%%%%%%%%
 The magnetic field is divergence-free:
 \begin{align*}
   \ve{\nabla}\cdot\ve{B}&=0\\
@@ -810,9 +884,7 @@ Taking the curl of the magnetic field gives Ampere's Law:
   }
 \end{align*}
 \subsection{Electrodynamics}
-%%%%%%%%%%%%%%%%%
 \subsubsection{Electromotive Force}
-%%%%%%%%%%%%%%%%%
 For an electric field applied in a material:
 \begin{align*}
   \ve{J} = \frac{\ve{E}}{\rho}
@@ -827,13 +899,13 @@ The power delivered:
 \begin{align*}
   P=VI=I^2R
 \end{align*}
-The electromotive force (emf) $\emf$ is the line integral of the force per unit charge driving the current:
+The electromotive force (emf) $\emf$ is the line integral of the force per unit
+charge driving the current:
 \begin{align*}
   \emf &=\oint \ve{E} \cdot d\ve{l}
 \end{align*}
 $\emf=V$ for an ideal source.
 \subsubsection{Faraday's Law}
-%%%%%%%%%%%%%%%%%
 Faraday's law states that a changing magnetic flux $\Phi$ induces an electric field:
 \begin{align*}
   \iftoggle{cgs}{
@@ -845,34 +917,31 @@ Faraday's law states that a changing magnetic flux $\Phi$ induces an electric fi
   }
 \end{align*}
 \subsubsection{Inductance}
-%%%%%%%%%%%%%%%%%
-If we have two current loops 1 and 2, the flux $\Phi_2$ through loop 2 is proportional to the current through loop 1:
+If we have two current loops 1 and 2, the flux $\Phi_2$ through loop 2 is
+proportional to the current through loop 1:
 \begin{align*}
   \Phi_2 = M_{21}I_1
 \end{align*}
-Where $M_{21}=M_{12}$ is the mutual inductance between these two loops. We can also define an self inductance $L$, for a single loop:
+Where $M_{21}=M_{12}$ is the mutual inductance between these two loops. We can
+also define an self inductance $L$, for a single loop:
 \begin{align*}
   \Phi &= LI\\
   \emf &= -L\frac{dI}{dt}
 \end{align*}
 \subsection{Electric Circuits}
-%%%%%%%%%%%%%%%%%
-
 \section{Oscillations and Waves}
-%%%%%%%%%%%%%%%%%
-Many questions involve solving linear differential equations. For such equations, linear combinations of solutions will also be a solution.
+Many questions involve solving linear differential equations. For such
+equations, linear combinations of solutions will also be a solution.
 \subsection{Oscillations}
-%%%%%%%%%%%%%%%%%
 \subsubsection{Simple Harmonic Motion}
-%%%%%%%%%%%%%%%%%
 We have a spring force, $F=-kx$.
 \begin{align*}
   \ddot{x}+\omega^2x&=0 \text{, where }\omega=\sqrt{\frac{k}{m}}\\
   x(t)&=A \cos(\omega t+\phi)
 \end{align*}
 \subsubsection{Damped Oscillators}
-%%%%%%%%%%%%%%%%%
-In addition to the spring force, we now have a drag force $F_f=-bv$, and the total force $F=-kx-b\dot{x}$.
+In addition to the spring force, we now have a drag force $F_f=-bv$, and the
+total force $F=-kx-b\dot{x}$.
 \begin{align*}
   \ddot{x} + 2\gamma\dot{x}+\omega^2x=0
 \end{align*}
@@ -886,14 +955,15 @@ Where $2\gamma=b/m$ and $\omega^2=k/m$. Let $\Omega = \sqrt{\gamma^2-\omega^2}$.
     x(t)&=e^{-\gamma t}(Ae^{i\tilde{\omega}t}+Be^{-i\tilde{\omega}t})\\
     &=e^{-\gamma t}C\cos(\tilde{\omega}t + \phi)
   \end{align*}
-  Where $\tilde{\omega}=\sqrt{\omega^2-\gamma^2}$. The system will oscillate with its amplitude decreasing over time. The frequency of oscillations will be smaller than in the undamped case.
+  Where $\tilde{\omega}=\sqrt{\omega^2-\gamma^2}$. The system will oscillate
+  with its amplitude decreasing over time. The frequency of oscillations will be
+  smaller than in the undamped case.
 \item[Overdamping] $(\Omega^2>0)$
   \begin{align*}
     x(t)=Ae^{-(\gamma-\Omega)t}+Be^{-(\gamma+\Omega)t}
   \end{align*}
   The system will not oscillate, and the motion will go to zero for large $t$.
 \item[Critical damping] $(\Omega^2=0)$
-
   We have $\gamma=\omega$, and:
   \begin{align*}
     \ddot{x}+2\gamma\dot{x}+\gamma^2x=0
@@ -905,43 +975,50 @@ Where $2\gamma=b/m$ and $\omega^2=k/m$. Let $\Omega = \sqrt{\gamma^2-\omega^2}$.
   Systems with critical damping go to zero the quickest.
 \end{description}
 \subsubsection{Driven Oscillators}
-%%%%%%%%%%%%%%%%%
 We have to solve differential equations of this form:
 \begin{align*}
   \ddot{x}+2\gamma\dot{x}+ax=\sum_{n=1}^{N}{C_ne^{i\omega_nt}}
 \end{align*}
-We first find particular solutions for each $n$, by guessing solutions of the form $x_{p_n}(t)=Ae^{i\omega_nt}$:
+We first find particular solutions for each $n$, by guessing solutions of the
+form $x_{p_n}(t)=Ae^{i\omega_nt}$:
 \begin{align*}
   -A{\omega_n}^2+2iA\gamma\omega_n+Aa=C_n \\
   x_{p_n}(t)=\frac{C_n}{-{\omega_n}^2+2i\gamma\omega_n+a}e^{i\omega_nt}
 \end{align*}
-Using the superposition principle, the final solution is a linear combination of the general solution and the particular solutions, with the combination constants determined by initial conditions.
+Using the superposition principle, the final solution is a linear combination of
+the general solution and the particular solutions, with the combination
+constants determined by initial conditions.
 \subsubsection{Coupled Oscillators}
-%%%%%%%%%%%%%%%%%
-Normal modes are states of a system where all parts are moving with the same frequency. General strategy to find normal modes:
+Normal modes are states of a system where all parts are moving with the same
+frequency. General strategy to find normal modes:
 \begin{enumerate}
-\item Write down the $n$ equations of motions corresponding to the $n$ degrees of freedom the system has.
-\item Substitute $x_i=A_ie^{i\omega t}$ into the differential equations to get a system of linear equations in $A_i$, with $i=1,2,\cdots,n$
-\item Non-trivial solutions exist if and only if the determinant of the matrix is zero. Solve for $\omega$, and subsequently find $A_i$
+\item Write down the $n$ equations of motions corresponding to the $n$ degrees
+  of freedom the system has.
+\item Substitute $x_i=A_ie^{i\omega t}$ into the differential equations to get a
+  system of linear equations in $A_i$, with $i=1,2,\cdots,n$
+\item Non-trivial solutions exist if and only if the determinant of the matrix
+  is zero. Solve for $\omega$, and subsequently find $A_i$
 \end{enumerate}
-The motion of the system can then be decomposed into linear combinations of its normal modes.
+The motion of the system can then be decomposed into linear combinations of its
+normal modes.
 \subsubsection{Small Oscillations}
-%%%%%%%%%%%%%%%%%
-For an object at a local minimum of a potential well, we can expand $V(x)$ about the equilibrium point:
+For an object at a local minimum of a potential well, we can expand $V(x)$ about
+the equilibrium point:
 \begin{align*}
   V(x)=&V(x_0)+V'(x_0)(x-x_0)\\
   &+ \frac{1}{2!}V''(x_0)(x-x_0)^2+\cdots
 \end{align*}
-As $V(x_0)$ is an additive constant, and $V'(x_0)=0$ by definition of equilibrium, 
+As $V(x_0)$ is an additive constant, and $V'(x_0)=0$ by definition of
+equilibrium,
 \begin{align*}
   V(x) &\approx \frac{1}{2}V''(x_0)(x-x_0)^2 \\
   F = -\frac{dV}{dx}&=-V''(x_0)(x-x_0) \\
-  %m\ddot{x}+V''(x_0)x&=V''(x_0)x_0 \\
+  % m\ddot{x}+V''(x_0)x&=V''(x_0)x_0 \\
   \omega&=\sqrt{\frac{V''(x_0)}{m}}
 \end{align*}
 \subsection{Wave Equation}
-%%%%%%%%%%%%%%%%%
-A wave is a disturbance of a continuous medium that propagates with a fixed shape at constant velocity. In one dimension:
+A wave is a disturbance of a continuous medium that propagates with a fixed
+shape at constant velocity. In one dimension:
 \begin{align*}
   u(z,t)=u(z-vt,0)=f(z-vt)
 \end{align*}
@@ -951,9 +1028,7 @@ All such functions $f$ are the solutions to the wave equation:
 \end{align*}
 Where $v$ is the speed of propagation.
 
-
 \subsubsection{String with Fixed Ends}
-%%%%%%%%%%%%%%%%%
 If the equation is subject to the following initial and boundary conditions:
 \begin{align*}
   u_x(0, t) &= u_x(L, t) = 0 \\
@@ -964,14 +1039,14 @@ The solution for these conditions is:
 \begin{align*}
   u(x, t) &= \sum_{n=1}^{\infty}\sin{\frac{n\pi}{L} x} \; \cdot \\
   &\left( a_n\sin{\frac{n \pi \alpha}{L} t}
-  + b_n\cos{\frac{n \pi \alpha}{L} t} \right) \\
+    + b_n\cos{\frac{n \pi \alpha}{L} t} \right) \\
   a_n &= \frac{2}{n \pi \alpha}\int_0^L g(x)\sin\frac{n \pi x}{L} dx \\
   b_n &= \frac{2}{L}\int_0^L f(x)\sin\frac{n \pi x}{L} dx
 \end{align*}
-
 \subsubsection{D'Alembert's Solution}
-%%%%%%%%%%%%%%%%%
-For an infinite string, it can be proved that any solution to the wave equation can be written as a superposition of two waves of velocity $v$, one travelling to the left, the other travelling to the right. For the initial conditions:
+For an infinite string, it can be proved that any solution to the wave equation
+can be written as a superposition of two waves of velocity $v$, one travelling
+to the left, the other travelling to the right. For the initial conditions:
 \begin{align*}
   u(x, 0) &= f(x) \\
   u_t(x, 0) &= g(x)
@@ -979,15 +1054,11 @@ For an infinite string, it can be proved that any solution to the wave equation 
 The solution of the wave equation is:
 \begin{align*}
   u(x, t) = \frac{1}{2} &\bigg[ f(x+vt) + f(x-vt)  \\
-    &+ \frac{1}{v}\int_{x-vt}^{x+vt}g(x') dx' \bigg]
+  &+ \frac{1}{v}\int_{x-vt}^{x+vt}g(x') dx' \bigg]
 \end{align*}
 \subsubsection{Electromagnetic Waves}
-%%%%%%%%%%%%%%%%%
-
 \section{Optics}
-%%%%%%%%%%%%%%%%%
 \subsection{Geometric Optics}
-%%%%%%%%%%%%%%%%%
 Results from Fermat's principle of least time:
 \begin{align*}
   \theta_\text{incidence}&=\theta_\text{reflection} \\
@@ -996,7 +1067,7 @@ Results from Fermat's principle of least time:
 Sign convention:
 \begin{itemize}
 \item Light rays travel from left to right
-\item $f$ is positive if surface makes rays more convergent 
+\item $f$ is positive if surface makes rays more convergent
 \item Distances are measured from the surface (left is negative)
 \item $s_o$ is negative for real objects
 \item $s_i$ is positive for real images
@@ -1019,7 +1090,6 @@ Lens formed by interface of two materials with different $n$:
   \frac{n_2-n_1}{R} = \frac{n_2}{s_i} + \frac{n_1}{s_o}
 \end{align*}
 \subsection{Polarization}
-%%%%%%%%%%%%%%%%%
 For polarized light:
 \begin{align*}
   E&=E_0\cos{\theta} \\
@@ -1034,56 +1104,54 @@ Brewster angle at which all reflected light at an interface is polarized:
   \tan{\theta_i}=\frac{n_t}{n_i}
 \end{align*}
 \subsection{Physical Optics}
-%%%%%%%%%%%%%%%%%
 Interference is the superposition of wave amplitudes when waves overlap.
 \subsubsection{Double Slit:}
-%%%%%%%%%%%%%%%%%
-Occurs when slits are of negligible width, distance between slits comparable to wavelength, such that diffraction effects are insignificant. For bright fringes:
+Occurs when slits are of negligible width, distance between slits comparable to
+wavelength, such that diffraction effects are insignificant. For bright fringes:
 \begin{align*}
   d\sin{\theta}&=m\lambda \\
   y_m&=R\frac{m\lambda}{d} \qquad m \in \mathbb{Z}
 \end{align*}
-For incident medium's refractive index $n_i$, reflection medium's refractive index $n_r$, if $n_i < n_r$, the reflected wave undergoes a $\frac{\pi}{2}$ phase shift.
+For incident medium's refractive index $n_i$, reflection medium's refractive
+index $n_r$, if $n_i < n_r$, the reflected wave undergoes a $\frac{\pi}{2}$
+phase shift.
 \subsubsection{Single Slit:}
-%%%%%%%%%%%%%%%%%
-Occurs when size of slit is comparable to wavelength. Location of dark fringes when wavelets at distance $\frac{a}{2}$ destructively interfere:
+Occurs when size of slit is comparable to wavelength. Location of dark fringes
+when wavelets at distance $\frac{a}{2}$ destructively interfere:
 \begin{align*}
   \sin{\theta}&=\frac{m\lambda}{d} \\
   y_m&=x\frac{m\lambda}{a} \qquad m \in \mathbb{Z}
 \end{align*}
 \subsubsection{Intensity in Diffraction Patterns}
-%%%%%%%%%%%%%%%%%
 For double slit interference:
 \begin{align*}
   I = I_{\text{max}} \cos^2\left(\frac{\pi d \sin{\theta}}{\lambda} \right)
 \end{align*}
 For single slit diffraction:
 \begin{align*}
-  I = I_{\text{max}} \left [\frac{\sin(\pi a \sin \theta / \lambda)}{\pi a \sin \theta / \lambda} \right]^2
+  I = I_{\text{max}} \left [\frac{\sin(\pi a \sin \theta / \lambda)}{\pi a \sin
+      \theta / \lambda} \right]^2
 \end{align*}
 Double slit including effects of diffraction:
 \begin{align*}
   I = I_{\text{max}} &\cos^2\left(\frac{\pi d \sin{\theta}}{\lambda} \right) \\
-  &\cdot  \left [\frac{\sin(\pi a \sin \theta / \lambda)}{\pi a \sin \theta / \lambda} \right]^2
+  &\cdot \left [\frac{\sin(\pi a \sin \theta / \lambda)}{\pi a \sin \theta /
+      \lambda} \right]^2
 \end{align*}
-
 \section{Thermodynamics}
-%%%%%%%%%%%%%%%%%
-If two objects are in thermal equilibrium with a third system, then they are in equilibrium with each other. 
-
+If two objects are in thermal equilibrium with a third system, then they are in
+equilibrium with each other.
 \subsection{Thermal Expansion}
-%%%%%%%%%%%%%%%%%
 For linear expansion, the change in length is:
 \begin{align*}
   \Delta L = \alpha L_0 \Delta T
 \end{align*}
-Where $\alpha$ is the coefficient of linear expansion. For area expansion, use approximately $2 \alpha $. For volume expansion, use approximately $3 \alpha$.
-
+Where $\alpha$ is the coefficient of linear expansion. For area expansion, use
+approximately $2 \alpha $. For volume expansion, use approximately $3 \alpha$.
 \subsection{Kinetic Theory of Gases}
-%%%%%%%%%%%%%%%%%
 \subsubsection{Ideal Gas Law}
-%%%%%%%%%%%%%%%%%
-An ideal gas' molecules are treated as non-interacting point particles. For an ideal gas of $N$ particles at pressure $P$, volume $V$ and temperature $T$:
+An ideal gas' molecules are treated as non-interacting point particles. For an
+ideal gas of $N$ particles at pressure $P$, volume $V$ and temperature $T$:
 \begin{align*}
   PV = NK_BT
 \end{align*}
@@ -1092,28 +1160,28 @@ For a non-ideal gas, the Van der Waals correction to the ideal gas law is:
   \left( P + a \left(\frac{n}{V}\right) ^2 \right) \left( V - bn\right) = nRT
 \end{align*}
 Where $a$ and $b$ are constants.
-
 \subsubsection{Internal Energy}
-%%%%%%%%%%%%%%%%%
-Different gases at the same temperature have the same average kinetic energy. Thus we define temperature of a substance to be its average kinetic energy. For a monatomic ideal gas:
+Different gases at the same temperature have the same average kinetic
+energy. Thus we define temperature of a substance to be its average kinetic
+energy. For a monatomic ideal gas:
 \begin{align*}
   \frac{1}{2}m\langle v^2 \rangle = \frac{3}{2}kT
 \end{align*}
 \noindent
-For a gas molecule with $r$ atoms, its total kinetic energy, center of mass kinetic energy and internal vibrational/rotational energy are given by:
+For a gas molecule with $r$ atoms, its total kinetic energy, center of mass
+kinetic energy and internal vibrational/rotational energy are given by:
 \begin{align*}
   E_{\text{Total}} &= \frac{3r}{2}kT \\
   E_{\text{COM}} &= \frac{3}{2}kT \\
-  E_{\text{Internal}} &= \frac{3(r-1)}{2}kT 
+  E_{\text{Internal}} &= \frac{3(r-1)}{2}kT
 \end{align*}
 \noindent
-The equipartition theorem states that each degree of freedom a molecule has contributes an extra $\frac{1}{2}KT$ of kinetic energy.
-
+The equipartition theorem states that each degree of freedom a molecule has
+contributes an extra $\frac{1}{2}KT$ of kinetic energy.
 \subsubsection{Maxwell Distribution}
-%%%%%%%%%%%%%%%%%
 For an ideal gas, the distrubution of its velocities is:
 \begin{align*}
-  f(v) = 4 \pi v^2 \left( \frac{m}{2 \pi kT} \right)^{\frac{3}{2}} 
+  f(v) = 4 \pi v^2 \left( \frac{m}{2 \pi kT} \right)^{\frac{3}{2}}
   e^{-\frac{mv^2}{2kT}}
 \end{align*}
 From this distribution, we can get the average speed of a particle:
@@ -1126,25 +1194,24 @@ The most probable velocty is the maximum point of the distribution:
 \end{align*}
 For any two particles, their average relative speed is:
 \begin{align*}
-  \langle v_{\text{rel}} \rangle = \sqrt{2} \langle v \rangle = 
+  \langle v_{\text{rel}} \rangle = \sqrt{2} \langle v \rangle =
   \sqrt{\frac{16kT}{\pi m}}
 \end{align*}
-From this, we can get the mean free path of a particle, the average distance a particle travels before hitting another particle:
+From this, we can get the mean free path of a particle, the average distance a
+particle travels before hitting another particle:
 \begin{align*}
   l_m = \frac{1}{4 \pi \sqrt{2} r^2 n}
 \end{align*}
 Where $n$ is the number density of the particle and $r$ is its radius.
-
 \subsubsection{Diffusion}
-%%%%%%%%%%%%%%%%%
-For a substance undergoing diffusion due to a concentration gradient $\frac{dc}{dx}$, the diffusive flux $J$ is:
+For a substance undergoing diffusion due to a concentration gradient
+$\frac{dc}{dx}$, the diffusive flux $J$ is:
 \begin{align*}
   J = D A \frac{dc}{dx}
 \end{align*}
-
 \subsection{Heat Teansfer}
-%%%%%%%%%%%%%%%%%
-For heat transfer through a material with length $l$, area $A$ and thermal conductivity $K$ between two heat reservoirs $T_1 > T_2$:
+For heat transfer through a material with length $l$, area $A$ and thermal
+conductivity $K$ between two heat reservoirs $T_1 > T_2$:
 \begin{align*}
   \frac{dQ}{dt} = \frac{KA (T_1 - T_2)}{l}
 \end{align*}
@@ -1152,48 +1219,42 @@ For a blackbody at temperature $T$ radiating heat away:
 \begin{align*}
   \frac{dQ}{dt} = \sigma A T^4
 \end{align*}
-The heat transfered by changing the temperature of a solid of mass $m$ with heat capacity $c$ is:
+The heat transfered by changing the temperature of a solid of mass $m$ with heat
+capacity $c$ is:
 \begin{align*}
   \Delta Q = mc \Delta T
 \end{align*}
-
 \subsection{Thermodynamic Processes}
-%%%%%%%%%%%%%%%%%
-In all the process described below, the heat $Q$ that goes into the gas is positive, and the work done on the gas $W$ is positive. The first law of thermodynamics states that the change of internal energy $U$ is:
+In all the process described below, the heat $Q$ that goes into the gas is
+positive, and the work done on the gas $W$ is positive. The first law of
+thermodynamics states that the change of internal energy $U$ is:
 \begin{align*}
   U &= Q + W \\
   U (\gamma - 1) &= NkT
 \end{align*}
 Where $\gamma = C_p/C_v$ is the ideal gas constant and $C_v = C_p - k$.
 \subsubsection{Isochoric}
-%%%%%%%%%%%%%%%%%
 In this constant volume process:
 \begin{align*}
   W &= 0 \\
   Q &= N C_v \Delta T \\
   U &= Q
 \end{align*}
-
 \subsubsection{Isobaric}
-%%%%%%%%%%%%%%%%%
 In a constant pressure volume expansion from $V_1$ to $V_2$:
 \begin{align*}
   W &= P(V_1 - V_2) \\
   Q &= N C_p \Delta T \\
   U &= N C_v \Delta T
 \end{align*}
-
 \subsubsection{Isothermal}
-%%%%%%%%%%%%%%%%%
 For an isothermal expansion from $V_1$ to $V_2$:
 \begin{align*}
   W &= NkT \ln \left( \frac{V_1}{V_2} \right) \\
   Q &= - W \\
-  U &= 0 
+  U &= 0
 \end{align*}
-
 \subsubsection{Adiabatic}
-%%%%%%%%%%%%%%%%%
 For an adiabatic process,
 \begin{align*}
   W &= - \int P dV \\
@@ -1204,68 +1265,71 @@ Integrating the work done, we get the following relation:
 \begin{align*}
   PV^{\gamma} = \text{constant}
 \end{align*}
-
 \subsection{Heat Engines}
-%%%%%%%%%%%%%%%%%
-The efficiency of a heat engine that takes in $Q_H$ and gives out $Q_L$ while doing work $W$, its efficiency is given by:
+The efficiency of a heat engine that takes in $Q_H$ and gives out $Q_L$ while
+doing work $W$, its efficiency is given by:
 \begin{align*}
   \eta &= \frac{|W|}{|Q_H|} \\
   &= 1 - \frac{|Q_L|}{|Q_H|}
 \end{align*}
-The efficiency of a heat pump that uses $W$ to pump $Q_L$ from the col reservoir is:
+The efficiency of a heat pump that uses $W$ to pump $Q_L$ from the col reservoir
+is:
 \begin{align*}
   \eta &= \frac{|Q_L|}{|W|}
 \end{align*}
-All reversible engines operating between the same two temperatures have the same efficiency as a Carnot engine, as you can fit many infinitisimally small Carnot cycles into any reversible cycle:
+All reversible engines operating between the same two temperatures have the same
+efficiency as a Carnot engine, as you can fit many infinitisimally small Carnot
+cycles into any reversible cycle:
 \begin{align*}
   \eta_{\text{carnot}} = 1 - \frac{T_L}{T_H}
 \end{align*}
-
 \subsection{Second Law of Thermodynamics}
 \begin{itemize}
-\item A process whose only net result is to take heat from a reservoir and convert it to heat is impossible. 
-\item No heat engine can working between two temperatures $T_1$ and $T_2$  can have a higher efficiency than a reversible engine.
+\item A process whose only net result is to take heat from a reservoir and
+  convert it to heat is impossible.
+\item No heat engine can working between two temperatures $T_1$ and $T_2$ can
+  have a higher efficiency than a reversible engine.
 \end{itemize}
-
 \subsection{Entropy}
-%%%%%%%%%%%%%%%%%
 \subsubsection{Macroscopic Definition}
-%%%%%%%%%%%%%%%%%
-Entropy is the measure of disorder. If heat is added reversibly into a system at temperature $T$, the increase in entropy in the system is:
+Entropy is the measure of disorder. If heat is added reversibly into a system at
+temperature $T$, the increase in entropy in the system is:
 \begin{align*}
   dS = \frac{dQ}{T}
 \end{align*}
-Entropy is a state function that doesn't depend on the path travelled. The total entropy change in the system and surroundings for a reversible process is zero. For an irreversible process, the total entropy change is always positive. 
+Entropy is a state function that doesn't depend on the path travelled. The total
+entropy change in the system and surroundings for a reversible process is
+zero. For an irreversible process, the total entropy change is always positive.
 \\
 \noindent
-At $T=0$, $S=0$. This is the third law of thermodynamics. 
+At $T=0$, $S=0$. This is the third law of thermodynamics.
 \subsubsection{Microscopic Definition}
-%%%%%%%%%%%%%%%%%
-Boltzmann defined entropy of a system by counting the number of indistinguishable microstates $w$ inside:
+Boltzmann defined entropy of a system by counting the number of
+indistinguishable microstates $w$ inside:
 \begin{align*}
   S = k \ln w
 \end{align*}
 
-
 \section{Quantum Mechanics}
-%%%%%%%%%%%%%%%%%
 \subsection{Schr\"{o}dinger's Equation}
-%%%%%%%%%%%%%%%%%
-$\Psi(x, t)$ is a complex wave function of time and position, the one-dimensional Schr\"{o}dinger's equation is given by:
+$\Psi(x, t)$ is a complex wave function of time and position, the
+one-dimensional Schr\"{o}dinger's equation is given by:
 \begin{align*}
   i \hbar \pd{\Psi}{t} = - \frac{\hbar^2}{2m} \pd{^2 \Psi}{x^2} + V\Psi
 \end{align*}
-If we denote the complex conjugate of the wave function to be $\cc{\Psi}$, the conjugate of Schr\"{o}dinger's equation is:
+If we denote the complex conjugate of the wave function to be $\cc{\Psi}$, the
+conjugate of Schr\"{o}dinger's equation is:
 \begin{align*}
-  -i \hbar \pd{\cc{\Psi}}{t} = \frac{\hbar^2}{2m} \pd{^2 \cc{\Psi}}{x^2} - V\cc{\Psi}
+  -i \hbar \pd{\cc{\Psi}}{t} = \frac{\hbar^2}{2m} \pd{^2 \cc{\Psi}}{x^2} -
+  V\cc{\Psi}
 \end{align*}
 At time $t$, the probability of finding a particle from $x=a$ to $x=b$ is:
 \begin{align*}
   \int_{a}^{b} |\Psi(x, t)|^2 dx = \int_{a}^{b}\Psi\cc{\Psi}dx
 \end{align*}
 \subsubsection{Normalization}
-%%%%%%%%%%%%%%%%%
-All wave functions must be normalized, so that the probability of finding the particle over all space is 1:
+All wave functions must be normalized, so that the probability of finding the
+particle over all space is 1:
 \begin{align*}
   \int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 1
 \end{align*}
@@ -1274,8 +1338,8 @@ Once a function is normalized, it remains normalized as time evolves:
   \frac{d}{dt} \int_{-\infty}^{\infty} \Psi \cc{\Psi} = 0
 \end{align*}
 \subsubsection{Expectation Values}
-%%%%%%%%%%%%%%%%%
-An expectation value of an observed quantity is the average of the measurement performed on many ``copies'' of the system at the same time.
+An expectation value of an observed quantity is the average of the measurement
+performed on many ``copies'' of the system at the same time.
 \begin{align*}
   \langle x\rangle &= \int_{-\infty}^{\infty} x |\Psi(x,t)|^2 dx \\
   &= \int_{-\infty}^{\infty} \cc{\Psi} x \Psi dx \\
@@ -1284,11 +1348,10 @@ An expectation value of an observed quantity is the average of the measurement p
 \end{align*}
 In general, the expectation value of any quantity is:
 \begin{align*}
-  \langle Q(x, p) \rangle = \int \cc{\Psi} Q\left(x, -i\hbar\pd{}{x} \right) \Psi dx
+  \langle Q(x, p) \rangle = \int \cc{\Psi} Q\left(x, -i\hbar\pd{}{x} \right)
+  \Psi dx
 \end{align*}
-
 \subsection{Time Independent Solution}
-%%%%%%%%%%%%%%%%%
 We solve Schr\"{o}dinger's equation by separation of variables. Let:
 \begin{align*}
   \Psi(x, t) = \psi(x) \phi(t)
@@ -1296,9 +1359,11 @@ We solve Schr\"{o}dinger's equation by separation of variables. Let:
 Then the equation can be written as:
 \begin{align*}
   i\hbar \psi \pd{\phi}{t} = -\frac{\hbar^2}{2m} \pd{^2 \psi}{x^2} \phi + V \phi \psi \\
-  \left( \frac{i\hbar}{\phi} \pd{\phi}{t} \right) + \left( \frac{\hbar^2}{2m\psi} \pd{^2 \psi}{x^2} -V(x) \right) = 0
+  \left( \frac{i\hbar}{\phi} \pd{\phi}{t} \right) + \left(
+    \frac{\hbar^2}{2m\psi} \pd{^2 \psi}{x^2} -V(x) \right) = 0
 \end{align*}
-As the two terms in the equation are independent of each other and they sum to zero, they must be constant. If we let:
+As the two terms in the equation are independent of each other and they sum to
+zero, they must be constant. If we let:
 \begin{align*}
   E &= \frac{i\hbar}{\phi} \pd{\phi}{t} \\
   \phi(t) &= e^{iE/ \hbar t}
@@ -1307,7 +1372,8 @@ The time independent solution is given by:
 \begin{align*}
   -\frac{\hbar^2}{2m}\pd{^2\psi}{x^2} + V(x) \psi = E \psi\
 \end{align*}
-If we define the Hamiltonian operator $\operator{H} = -\frac{\hbar^2}{2m} \pd{^2}{x^2} + V$,
+If we define the Hamiltonian operator $\operator{H} = -\frac{\hbar^2}{2m}
+\pd{^2}{x^2} + V$,
 \begin{align*}
   \operator{H} \psi = E\psi
 \end{align*}
