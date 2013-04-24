@@ -1,6 +1,5 @@
 % Copyright (c) 2011-2013 by Chenyang Yuan.
 
-
 % This work is licensed under a Creative Commons Attribution-ShareAlike 3.0
 % Unported License.  http://creativecommons.org/licenses/by-sa/3.0/
 
@@ -503,9 +502,9 @@ translational motion and a rotation about an axis at a particular time.
 The angular velocity vector $\ve{\omega}$ points along the axis of rotation,
 with a magnitude equal to its angular speed. Its direction is determined by
 convention of the right hand rule. For an object rotating at $\ve{\omega}$, the
-velocity of a point at $\ve{r}$ is:
+time derivative of any vector $\ve{r}$ fixed in the body frame is:
 \begin{align*}
-  \ve{v} = \ve{\omega} \times \ve{r}
+  \ve{v} = \frac{d\ve{r}}{dt} = \ve{\omega} \times \ve{r}
 \end{align*}
 Angular velocities add like vectors. Let $S_1$, $S_2$ and $S_3$ be coordinate
 systems. If $S_1$ rotates with $\ve{\omega}_{1, 2}$ with respect to $S_2$, and
@@ -767,7 +766,7 @@ principle we can find the potential of any charge distribution:
 \end{align*}
 Taking the gradient of the potential:
 \begin{align*}
-  \ve{E}&=-\nabla V\\
+  \ve{E}&=- \ve{\nabla} V\\
   \iftoggle{cgs}{
   \nabla^2V&= -4 \pi \rho
   }{
@@ -865,10 +864,10 @@ The magnetic field created by a steady line current:
   \ve{B}(\ve{r})= \frac{I}{c}\int\frac{d\ve{l}\times\dvrhat}{\dr^2}
   }{
   \ve{B}(\ve{r})= \frac{\mu_0}{4\pi}I\int\frac{d\ve{l}\times\dvrhat}{\dr^2}
-  }
+}
 \end{align*}
 \subsubsection{Magnetic Fields}
-The magnetic field is divergence-free:
+Unlike in electrostatics, conductors do not screen magnetic fields. The magnetic field is divergence-free:
 \begin{align*}
   \ve{\nabla}\cdot\ve{B}&=0\\
   \oint\ve{B}\cdot d\ve{a}&=0
@@ -883,17 +882,39 @@ Taking the curl of the magnetic field gives Ampere's Law:
   \oint\ve{B}\cdot d\ve{l}&=\mu_0 I_{\text{enc}}
   }
 \end{align*}
+The energy stored in an magnetic field is:
+\begin{align*}
+  \iftoggle{cgs}{
+    U = \frac{1}{8\pi} \int B^2 d\tau
+  }{
+    U = \frac{\mu_0}{2} \int B^2 d\tau
+  }
+\end{align*}
 \subsection{Electrodynamics}
+\subsubsection{Electric Currents}
+For $N_e$ particles of charge $e$ moving at an average velocity $\langle \ve{v}
+\rangle$, the current density is:
+\begin{align*}
+  \ve{J} = -N_e e \langle \ve{v} \rangle
+\end{align*}
+If $\rho$ is the charge density, the current $I$ is given by:
+\begin{align*}
+  I = - \pd{}{t} \int_V \rho d\tau
+\end{align*}
+When the total charge is conserved, we have the continuity equation:
+\begin{align*}
+  \ve{\nabla} \cdot \ve{J} = - \pd{\rho(t)}{t}
+\end{align*}
 \subsubsection{Electromotive Force}
 For an electric field applied in a material:
 \begin{align*}
-  \ve{J} = \frac{\ve{E}}{\rho}
+  \ve{J} = \sigma \ve{E}
 \end{align*}
-Where $\rho$ is the resistivity constant depending on the material.
+Where $\sigma$ is the conductivity constant depending on the material.
 This leads to Ohm's law:
 \begin{align*}
   V&=IR\\
-  R&=\rho\frac{l}{A}
+  R&=\frac{l}{\sigma A}
 \end{align*}
 The power delivered:
 \begin{align*}
@@ -909,24 +930,36 @@ $\emf=V$ for an ideal source.
 Faraday's law states that a changing magnetic flux $\Phi$ induces an electric field:
 \begin{align*}
   \iftoggle{cgs}{
-  \emf =\oint \ve{E} \cdot d\ve{l} &= -\frac{1}{c}\frac{d\Phi}{dt}\\
-  \ve{\nabla}\times\ve{E} &= -\frac{1}{c} \frac{d\ve{B}}{dt}
+    \emf =\oint \ve{E} \cdot d\ve{l} &= -\frac{1}{c}\frac{d\Phi}{dt}\\
+    \ve{\nabla}\times\ve{E} &= -\frac{1}{c} \frac{d\ve{B}}{dt}
   }{
-  \emf =\oint \ve{E} \cdot d\ve{l} &= -\frac{d\Phi}{dt}\\
-  \ve{\nabla}\times\ve{E} &= -\frac{d\ve{B}}{dt}
+    \emf =\oint \ve{E} \cdot d\ve{l} &= -\frac{d\Phi}{dt}\\
+    \ve{\nabla}\times\ve{E} &= -\frac{d\ve{B}}{dt}
   }
 \end{align*}
 \subsubsection{Inductance}
 If we have two current loops 1 and 2, the flux $\Phi_2$ through loop 2 is
 proportional to the current through loop 1:
 \begin{align*}
-  \Phi_2 = M_{21}I_1
+  \iftoggle{cgs}{
+    \Phi_2 = cM_{21}I_1
+  }{
+    \Phi_2 = M_{21}I_1
+  }
 \end{align*}
 Where $M_{21}=M_{12}$ is the mutual inductance between these two loops. We can
 also define an self inductance $L$, for a single loop:
 \begin{align*}
-  \Phi &= LI\\
+  \iftoggle{cgs}{
+    \Phi &= cLI\\
+  }{
+    \Phi &= LI\\
+  }  
   \emf &= -L\frac{dI}{dt}
+\end{align*}
+When a steady current $I$ is flowing through an inductor with inductance $L$, the energy stored in the inductor is:
+\begin{align*}
+  U = \frac{1}{2} L I^2
 \end{align*}
 \subsection{Electric Circuits}
 \section{Oscillations and Waves}
