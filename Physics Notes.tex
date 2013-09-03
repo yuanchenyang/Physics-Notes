@@ -4,7 +4,7 @@
 % Unported License.  http://creativecommons.org/licenses/by-sa/3.0/
 
 % For American-friendly paper
-\documentclass[11pt, letterpaper]{article} 
+\documentclass[11pt, letterpaper]{article}
 
 \usepackage{amssymb}
 \usepackage{siunitx}
@@ -17,10 +17,10 @@
 \usepackage{hyperref}
 \usepackage{etoolbox}
 
-% Compile in CGS units
-% To compile in SI units use: togglefalse{cgs}
+% Compile in SI units
+% To compile in CGS units use: toggletrue{cgs}
 \newtoggle{cgs}
-\toggletrue{cgs}
+\togglefalse{cgs}
 
 % Remove table of contents' name
 \makeatletter
@@ -35,11 +35,11 @@
 \newcommand{\emf}{\mathcal{E}}	       % EMF
 \newcommand{\Imp}{\mathcal{I}}	       % Impulse
 \newcommand{\dr}{
-  \ensuremath{\text{r}}}               % Displacement r 
+  \ensuremath{\text{r}}}               % Displacement r
 \newcommand{\dvr}{
-  \ensuremath{\textbf{r}}}             % Displacement vector r 
+  \ensuremath{\textbf{r}}}             % Displacement vector r
 \newcommand{\dvrhat}{
-  \ensuremath{\ve{\hat{\dvr}}}}	       % Displacement unit vector r 
+  \ensuremath{\ve{\hat{\dvr}}}}	       % Displacement unit vector r
 
 % -----------Functions-----------
 \newcommand{\ve}[1]{
@@ -51,7 +51,7 @@
 \newcommand{\fve}[1]{
   \ensuremath{\vec{#1}}}               % Four-vector
 \newcommand{\cc}[1]{
-  \ensuremath{#1^{\ast}}}               % Complex Conjugate
+  \ensuremath{#1^{\ast}}}              % Complex Conjugate
 \newcommand{\pd}[2]{
   \ensuremath{
     \frac{\partial #1}{\partial #2} }} % Partial Derivative
@@ -66,7 +66,7 @@
 
 \maketitle
 \begin{center}
-  \includegraphics[scale=0.7, natwidth=88 , natheight=31]{deed.png} 
+  \includegraphics[scale=0.7, natwidth=88 , natheight=31]{deed.png}
 \end{center}
 
 \begin{multicols*}{2}
@@ -319,7 +319,7 @@ The the forces of constraint are:
 If we take the total time derivative of the Lagrangian, we get:
 \begin{align*}
   \frac{d\Lagr}{dt} = \pd{\Lagr}{t} + \ddot{q}_i\pd{\Lagr}{\dot{q}_i} +
-  \dot{q}_i \frac{d}{dt} \left( \pd{\Lagr}{\dot{q}_i} \right)  
+  \dot{q}_i \frac{d}{dt} \left( \pd{\Lagr}{\dot{q}_i} \right)
 \end{align*}
 If the Lagrangian is explicitly independent of time, we have the following conserved quantity, which is the energy of the system:
 \begin{align*}
@@ -357,7 +357,7 @@ time evolution.
 \subsubsection{Poisson Brackets}
 The Poisson bracket binary operation is defined as:
 \begin{align*}
-  \{ f(p, q, t), g(p, q, t) \} = \pd{f}{q}\pd{g}{p} - \pd{f}{p}\pd{g}{q}  
+  \{ f(p, q, t), g(p, q, t) \} = \pd{f}{q}\pd{g}{p} - \pd{f}{p}\pd{g}{q}
 \end{align*}
 If $p$ and $q$ are the solutions to Hamiltonian's equations:
 \begin{align*}
@@ -426,7 +426,7 @@ If we define the {\em moment of intertia} about the $z$-axis to be $I_z=\int
 \end{align*}
 For the $z$-component of $\ve{L}$ and kinetic energy $T$.
 \subsubsection{General Motion}
-For an object with a moving center of mass, and rotating at $\omega$ about it, 
+For an object with a moving center of mass, and rotating at $\omega$ about it,
 \begin{align*}
   \ve{L}&=\ve{r_\text{CM}}\times\ve{p_\text{CM}}+I_\text{CM}\omega \uve{z}\\
   T&=\frac{1}{2}mv_\text{CM}^2+\frac{1}{2}I_\text{CM}\omega^2
@@ -446,11 +446,11 @@ Using an origin satisfying any of the following conditions to calculate $\ve{L}$
 \begin{align*}
   \frac{d\ve{L}}{dt}=\sum \ve{\tau_\text{ext}}
 \end{align*}
-When there is no external torque, we have the conservation of angular momentum. 
+When there is no external torque, we have the conservation of angular momentum.
 \begin{align*}
   \ve{\tau_\text{ext}}=I\alpha
 \end{align*}
-Where $\alpha=\frac{d\omega}{dt}$ is the angular acceleration. 
+Where $\alpha=\frac{d\omega}{dt}$ is the angular acceleration.
 \subsubsection{Angular Impulse}
 Angular impulse is defined as:
 \begin{align*}
@@ -545,11 +545,26 @@ The kinetic energy of the object is:
 \end{align*}
 Where $\ve{\omega}'$ and $\ve{L}_{\text{CM}}$ are measured about the center of
 mass along axes parallel to the fixed-frame axes.
-\subsubsection{Principal Axes}
-A principal axis is an axis of rotation $\uve{\omega}$ such that
-$\tensor{I}\uve{\omega} = I\uve{\omega}$. An object can rotate about a principal
+\subsubsection{Principle Axes}
+A principle axis is an axis of rotation $\uve{\omega}$ such that
+$\tensor{I}\uve{\omega} = I\uve{\omega}$. An object can rotate about a principle
 axis at constant angular velocity with no external torque. An orthonormal set of
 principle axis exists for every object.
+\subsubsection{Euler's Equations}
+When an object is instantaneously rotating about an axis $\ve{\omega}$, we can
+relate the rate of change of angular momentum in the frame of the principle axes
+and the lab frame by:
+\begin{align*}
+  \frac{d\ve{L}}{dt}_\text{lab} = \frac{d\ve{L}}{dt}_\text{body} + \ve{\omega}
+  \times \ve{L}
+\end{align*}
+This gives us Euler's equations, where $\omega_i$ and $\tau_i$ are components of
+$\ve{\omega}$ and torque projected onto the principle axes respectively:
+\begin{align*}
+  \tau_1 &= I_1\dot{\omega_1} - (I_2 - I_3)\omega_2\omega_3 \\
+  \tau_2 &= I_1\dot{\omega_2} - (I_3 - I_1)\omega_3\omega_1 \\
+  \tau_3 &= I_1\dot{\omega_3} - (I_1 - I_2)\omega_1\omega_2 \\
+\end{align*}
 \section{Special Relativity}
 \subsection{Postulates}
 \begin{enumerate}
@@ -791,7 +806,7 @@ The energy in a continuous charge distribution is:
 \end{align*}
 Where the integral is taken over all space.
 \subsubsection{Conductors}
-A perfect conductor has an unlimited supply of free charges. 
+A perfect conductor has an unlimited supply of free charges.
 \begin{enumerate}
 \item $\ve{E}=0$ and $\rho = 0$ inside a conductor
 \item Any conductor is an equipotential
@@ -890,6 +905,22 @@ The energy stored in an magnetic field is:
     U = \frac{\mu_0}{2} \int B^2 d\tau
   }
 \end{align*}
+\subsubsection{Magnetic Vector Potential}
+For any magnetic field $\ve{B}$, we define the vector potential $\ve{A}$ such
+that:
+\begin{align*}
+  \ve{B} = \ve{\nabla} \times \ve{A}
+\end{align*}
+Taking the curl of the magnetic field and applying Ampere's law, we get:
+\begin{align*}
+  \iftoggle{cgs}{
+    \nabla^2 \ve{A} &= - \frac{4 \pi}{c} \ve{J} \\
+    \ve{A} &= \frac{1}{c} \int \frac{\ve{J}}{r} dV
+  }{
+    \nabla^2 \ve{A} &= - \mu_0 \ve{J} \\
+    \ve{A} &= \frac{\mu_0}{4 \pi} \int \frac{\ve{J}}{r} dV
+  }
+\end{align*}
 \subsection{Electrodynamics}
 \subsubsection{Electric Currents}
 For $N_e$ particles of charge $e$ moving at an average velocity $\langle \ve{v}
@@ -954,12 +985,24 @@ also define an self inductance $L$, for a single loop:
     \Phi &= cLI\\
   }{
     \Phi &= LI\\
-  }  
+  }
   \emf &= -L\frac{dI}{dt}
 \end{align*}
 When a steady current $I$ is flowing through an inductor with inductance $L$, the energy stored in the inductor is:
 \begin{align*}
   U = \frac{1}{2} L I^2
+\end{align*}
+\subsubsection{Displacement Current}
+In order for the continuity equation to hold under changing magnetic fields, we
+must consider another displacement current when using Ampere's law:
+\begin{align*}
+  \iftoggle{cgs}{
+    \ve{J}_D &= \frac{1}{4\pi} \frac{d \ve{E}}{dt} \\
+    \ve{\nabla} \times \ve{B} &= \frac{4\pi}{c} (\ve{J} + \ve{J}_D)
+  }{
+    \ve{J}_D &= \epsilon_0 \frac{d \ve{E}}{dt} \\
+    \ve{\nabla} \times \ve{B} &= \mu_0 (\ve{J} + \ve{J}_D)
+  }
 \end{align*}
 \subsection{Electric Circuits}
 \section{Oscillations and Waves}
@@ -1090,6 +1133,38 @@ The solution of the wave equation is:
   &+ \frac{1}{v}\int_{x-vt}^{x+vt}g(x') dx' \bigg]
 \end{align*}
 \subsubsection{Electromagnetic Waves}
+Maxwell's equations in vacuum:
+\begin{align*}
+  \iftoggle{cgs}{
+    \ve{\nabla} \times \ve{E} &= - \frac{1}{c} \frac{d\ve{B}}{dt} \\
+  }{
+    \ve{\nabla} \times \ve{E} &= - \frac{d\ve{B}}{dt} \\
+  }
+  \ve{\nabla} \cdot \ve{E} &= 0 \\
+  \iftoggle{cgs}{
+    \ve{\nabla} \times \ve{B} &= \frac{1}{c} \frac{d\ve{E}}{dt} \\
+  }{
+    \ve{\nabla} \times \ve{B} &= \mu_0 \epsilon_0 \frac{d\ve{E}}{dt} \\
+  }
+  \ve{\nabla} \cdot \ve{B} &= 0
+\end{align*}
+Plugging the equations in and simplifying, we get:
+\begin{align*}
+  \nabla^2 \ve{B} &= \frac{1}{\iftoggle{cgs}{c^2}{\mu_0 \epsilon_0}}
+  \frac{d\ve{B}}{dt} \\
+  \nabla^2 \ve{E} &= \frac{1}{\iftoggle{cgs}{c^2}{\mu_0 \epsilon_0}}
+  \frac{d\ve{E}}{dt}
+\end{align*}
+For Maxwell's equations to hold, the $\ve{E}$ and $\ve{B}$ fields and their
+direction of propagation are mutually perpendicular. Also, the amplitudes $E_0$
+and $B_0$ are related by: $B_0 = \iftoggle{cgs}{}{\frac{1}{c}} E_0$.
+\subsubsection{Poynting Vector}
+The Poynting vector $\ve{S}$ is defined as:
+\begin{align*}
+  \ve{S} = \iftoggle{cgs}{\frac{c}{4\pi}}{\frac{1}{\mu_0}} \ve{E} \times \ve{B}
+\end{align*}
+This vector points in the direction of propagation of the wave, and $\ve{S}
+\cdot d\ve{a}$ is the energy per unit time passing through $d\ve{a}$.
 \section{Optics}
 \subsection{Geometric Optics}
 Results from Fermat's principle of least time:
