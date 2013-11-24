@@ -22,6 +22,7 @@
 *.mtc1
 *.out
 *.synctex.gz
+_region_.*
 
 # emacs specific
 \#*\#
@@ -39,4 +40,4 @@ Thumbs.db
 *.DS_Store
 *.swp
 *.out
-/auto/Physics Notes.el
+/auto

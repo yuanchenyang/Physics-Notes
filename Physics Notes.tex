@@ -57,6 +57,8 @@
     \frac{\partial #1}{\partial #2} }} % Partial Derivative
 \newcommand{\operator}[1]{
   \ensuremath{\hat{\text{#1}}}}        % Operator
+\newcommand{\ave}[1]{
+  \ensuremath{\langle #1 \rangle}}     % Average Value
 
 
 \title{Physics Notes}
@@ -249,13 +251,11 @@ Where $E$ is defined as the mechanical energy of the system.
 If we have a collection of particles at positions $\ve{r}_i$, and each of them
 experiences a force $\ve{F}_i$, their average kinetic energy is given by:
 \begin{align*}
-  \langle T \rangle &= -\frac{1}{2} \left\langle \sum \ve{F}_i \cdot \ve{r}_i
-  \right\rangle
+  \ave{ T } &= -\frac{1}{2} \left\ave{ \sum \ve{F}_i \cdot \ve{r}_i \right}
 \end{align*}
 For one particle:
 \begin{align*}
-  \langle T \rangle &= -\frac{1}{2} \left\langle \frac{dU}{dr} \cdot \ve{r}
-  \right\rangle
+  \ave{ T } &= -\frac{1}{2} \left\ave{ \frac{dU}{dr} \cdot \ve{r} \right}
 \end{align*}
 \subsubsection{Power}
 Power is the rate of work done per unit time:
@@ -654,57 +654,58 @@ For massless particles(such as photons):
 \subsection{4-vectors}
 A 4-vector $\fve{A}=(A_1,A_2,A_3,A_4)$ is a quantity that transforms as follows:
 \begin{align*}
-  A_1'&= \gamma(A_1+i\beta A_4)\\
+  A_1'&= \gamma(A_1+\beta A_4)\\
   A_2'&= A_2\\
   A_3'&= A_3\\
-  A_4'&= \gamma(A_4-i\beta A_1)
+  A_4'&= \gamma(A_4+\beta A_1)
 \end{align*}
 The dot product of two 4-vectors is invariant under Lorentz transformations:
 \begin{align*}
-  \fve{A}\cdot\fve{B}=\fve{A'}\cdot\fve{B'}
+  \fve{A}\cdot\fve{B} &= A_1B_1 + A_2B_2 + A_3B_3 - A_4B_4\\
+  &= \fve{A'}\cdot\fve{B'}
 \end{align*}
 \subsubsection{Different 4-vectors}
 \begin{description}
   \setlength{\itemsep}{-2mm}
-\item[4-position] $(dx, dy, dz, icdt)$
+\item[4-position] $(dx, dy, dz, cdt)$
   4-vectors originate from the invariant interval $ds$.
   \begin{align*}
-    \fve{ds}^2&=(dx, dy, dz, icdt)^2 \\
+    \fve{ds}^2&=(dx, dy, dz, cdt)^2 \\
     &=dx^2+dy^2+dz^2-c^2dt^2
   \end{align*}
-\item[4-velocity] $\gamma_v(\ve{v},ic)$
+\item[4-velocity] $\gamma_v(\ve{v},c)$
   To obtain other 4-vectors, we can multiply invariant quantities to the
   4-position vector, such as proper time:
   \begin{align*}
     d\tau&=\frac{dt}{\gamma}\\
     \fve{v}&=\frac{ds}{d\tau}\\
-    &=\gamma_v\left(\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt},ic\right)\\
-    &=\gamma_v(\ve{v},ic)
+    &=\gamma_v\left(\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt},c\right)\\
+    &=\gamma_v(\ve{v},c)
   \end{align*}
-\item[4-momentum] $\left(\ve{p},i\frac{E}{c}\right)$
+\item[4-momentum] $\left(\ve{p},\frac{E}{c}\right)$
   As mass is invariant,
   \begin{align*}
     \fve{p}&=m\fve{v}\\
-    &=(\gamma_vm\ve{v},i\gamma_vmc)\\
-    &=\left(\ve{p},i\frac{E}{c}\right)
+    &=(\gamma_vm\ve{v},\gamma_vmc)\\
+    &=\left(\ve{p},\frac{E}{c}\right)
   \end{align*}
   For photons in x-direction, the 4-momentum vector is:
   \begin{align*}
-    \fve{p}=\left(\frac{h}{\lambda},0,0,i\frac{h}{\lambda}\right)
+    \fve{p}=\left(\frac{h}{\lambda},0,0,\frac{h}{\lambda}\right)
   \end{align*}
-\item[4-wave] $\left(\ve{k},i\frac{\omega}{c}\right)$
+\item[4-wave] $\left(\ve{k},\frac{\omega}{c}\right)$
   For electromagnetic waves,
   \begin{align*}
     k&=\frac{2\pi}{\lambda}=\frac{\omega}{c}\\
     \ve{p}&=\frac{h}{\lambda}=\hbar\ve{k}\\
     E&=hf=\hbar\omega\\
-    \fve{p}&=\hbar\left(\ve{k},i\frac{\omega}{c}\right)\\
+    \fve{p}&=\hbar\left(\ve{k},\frac{\omega}{c}\right)\\
     \fve{k}&=\frac{\fve{p}}{\hbar}
   \end{align*}
-\item[4-force] $\gamma_v\left(\ve{f},\frac{i}{c}\frac{dE}{dt}\right)$
+\item[4-force] $\gamma_v\left(\ve{f},\frac{1}{c}\frac{dE}{dt}\right)$
   \begin{align*}
     \fve{F}&=\frac{d\fve{p}}{d\tau}\\
-    &=\gamma_v\left(\ve{f},\frac{d}{dt}\left(i\frac{E}{c}\right)\right)
+    &=\gamma_v\left(\ve{f},\frac{d}{dt}\left(\frac{E}{c}\right)\right)
   \end{align*}
 \end{description}
 \section{Electricity and Magnetism}
@@ -902,7 +903,7 @@ The energy stored in an magnetic field is:
   \iftoggle{cgs}{
     U = \frac{1}{8\pi} \int B^2 d\tau
   }{
-    U = \frac{\mu_0}{2} \int B^2 d\tau
+    U = \frac{1}{2\mu_0} \int B^2 d\tau
   }
 \end{align*}
 \subsubsection{Magnetic Vector Potential}
@@ -923,10 +924,10 @@ Taking the curl of the magnetic field and applying Ampere's law, we get:
 \end{align*}
 \subsection{Electrodynamics}
 \subsubsection{Electric Currents}
-For $N_e$ particles of charge $e$ moving at an average velocity $\langle \ve{v}
-\rangle$, the current density is:
+For $N_e$ particles of charge $e$ moving at an average velocity $\ave{ \ve{v}}$,
+the current density is:
 \begin{align*}
-  \ve{J} = -N_e e \langle \ve{v} \rangle
+  \ve{J} = -N_e e \ave{ \ve{v} }
 \end{align*}
 If $\rho$ is the charge density, the current $I$ is given by:
 \begin{align*}
@@ -1182,7 +1183,7 @@ Sign convention:
 \item $y$ above optical axis is positive
 \end{itemize}
 \begin{align*}
-  \frac{1}{f}&=\frac{1}{s_{i}}+\frac{1}{s_{o}} \\
+  \frac{1}{s_{o}} +\frac{1}{f} &=\frac{1}{s_{i}}\\
   M&=\frac{y_i}{y_o}=-\frac{s_i}{s_o}
 \end{align*}
 For thin lenses and mirrors:
@@ -1205,7 +1206,7 @@ For polarized light:
 \end{align*}
 For unpolarized light:
 \begin{align*}
-  \langle I \rangle=I_0 \langle \cos^2{\theta} \rangle = \frac{I_0}{2}
+  \ave{ I }=I_0 \ave{ \cos^2{\theta} } = \frac{I_0}{2}
 \end{align*}
 Brewster angle at which all reflected light at an interface is polarized:
 \begin{align*}
@@ -1273,7 +1274,7 @@ Different gases at the same temperature have the same average kinetic
 energy. Thus we define temperature of a substance to be its average kinetic
 energy. For a monatomic ideal gas:
 \begin{align*}
-  \frac{1}{2}m\langle v^2 \rangle = \frac{3}{2}kT
+  \frac{1}{2}m\ave{ v^2 } = \frac{3}{2}kT
 \end{align*}
 \noindent
 For a gas molecule with $r$ atoms, its total kinetic energy, center of mass
@@ -1294,7 +1295,7 @@ For an ideal gas, the distrubution of its velocities is:
 \end{align*}
 From this distribution, we can get the average speed of a particle:
 \begin{align*}
-  \langle v \rangle = \sqrt{\frac{8kT}{\pi m}}
+  \ave{ v } = \sqrt{\frac{8kT}{\pi m}}
 \end{align*}
 The most probable velocty is the maximum point of the distribution:
 \begin{align*}
@@ -1302,8 +1303,7 @@ The most probable velocty is the maximum point of the distribution:
 \end{align*}
 For any two particles, their average relative speed is:
 \begin{align*}
-  \langle v_{\text{rel}} \rangle = \sqrt{2} \langle v \rangle =
-  \sqrt{\frac{16kT}{\pi m}}
+  \ave{ v_{\text{rel}} } = \sqrt{2} \ave{ v } = \sqrt{\frac{16kT}{\pi m}}
 \end{align*}
 From this, we can get the mean free path of a particle, the average distance a
 particle travels before hitting another particle:
@@ -1423,67 +1423,72 @@ indistinguishable microstates $w$ inside:
 $\Psi(x, t)$ is a complex wave function of time and position, the
 one-dimensional Schr\"{o}dinger's equation is given by:
 \begin{align*}
-  i \hbar \pd{\Psi}{t} = - \frac{\hbar^2}{2m} \pd{^2 \Psi}{x^2} + V\Psi
+  i \hbar \pd{\Psi}{t} = - \frac{\hbar^2}{2m} \nabla^2 \Psi + V\Psi
 \end{align*}
 If we denote the complex conjugate of the wave function to be $\cc{\Psi}$, the
 conjugate of Schr\"{o}dinger's equation is:
 \begin{align*}
-  -i \hbar \pd{\cc{\Psi}}{t} = \frac{\hbar^2}{2m} \pd{^2 \cc{\Psi}}{x^2} -
+  -i \hbar \pd{\cc{\Psi}}{t} = \frac{\hbar^2}{2m} \nabla^2 \cc{\Psi} -
   V\cc{\Psi}
 \end{align*}
 At time $t$, the probability of finding a particle from $x=a$ to $x=b$ is:
 \begin{align*}
-  \int_{a}^{b} |\Psi(x, t)|^2 dx = \int_{a}^{b}\Psi\cc{\Psi}dx
+  \int_{a}^{b} |\Psi(\ve{r}, t)|^2 d\ve{r} = \int_{a}^{b}\Psi\cc{\Psi}d\ve{r}
 \end{align*}
 \subsubsection{Normalization}
 All wave functions must be normalized, so that the probability of finding the
 particle over all space is 1:
 \begin{align*}
-  \int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 1
+  \int_{-\infty}^{\infty} |\Psi(\ve{r},t)|^2 d\ve{r} = 1
 \end{align*}
 Once a function is normalized, it remains normalized as time evolves:
 \begin{align*}
-  \frac{d}{dt} \int_{-\infty}^{\infty} \Psi \cc{\Psi} = 0
+  \frac{d}{dt} \int_{-\infty}^{\infty} \Psi \cc{\Psi} d\ve{r} = 0
 \end{align*}
 \subsubsection{Expectation Values}
 An expectation value of an observed quantity is the average of the measurement
 performed on many ``copies'' of the system at the same time.
 \begin{align*}
-  \langle x\rangle &= \int_{-\infty}^{\infty} x |\Psi(x,t)|^2 dx \\
+  \ave{x} &= \int_{-\infty}^{\infty} x |\Psi(x,t)|^2 dx \\
   &= \int_{-\infty}^{\infty} \cc{\Psi} x \Psi dx \\
-  \langle p\rangle &= m\frac{d\langle x\rangle}{dt} \\
+  \ave{p_x} &= m\frac{d\ave{x}}{dt} \\
   &= \int_{-\infty}^{\infty} \cc{\Psi} \left( -i\hbar \pd{}{x} \right) \Psi dx
 \end{align*}
 In general, the expectation value of any quantity is:
 \begin{align*}
-  \langle Q(x, p) \rangle = \int \cc{\Psi} Q\left(x, -i\hbar\pd{}{x} \right)
-  \Psi dx
+  \ave{Q(\ve{r}, \ve{p})} = \int \cc{\Psi} Q\left(\ve{r}, -i\hbar
+    \ve{\nabla} \right) \Psi \ve{r}
 \end{align*}
 \subsection{Time Independent Solution}
-We solve Schr\"{o}dinger's equation by separation of variables. Let:
+If $V$ is independent of time, we solve Schr\"{o}dinger's equation by separating
+variables. Let:
 \begin{align*}
   \Psi(x, t) = \psi(x) \phi(t)
 \end{align*}
 Then the equation can be written as:
 \begin{align*}
-  i\hbar \psi \pd{\phi}{t} = -\frac{\hbar^2}{2m} \pd{^2 \psi}{x^2} \phi + V \phi \psi \\
+  i\hbar \psi \pd{\phi}{t} = -\frac{\hbar^2}{2m} \nabla^2 \phi + V \phi \psi \\
   \left( \frac{i\hbar}{\phi} \pd{\phi}{t} \right) + \left(
-    \frac{\hbar^2}{2m\psi} \pd{^2 \psi}{x^2} -V(x) \right) = 0
+    \frac{\hbar^2}{2m\psi} \nabla^2 -V(x) \right) = 0
 \end{align*}
 As the two terms in the equation are independent of each other and they sum to
 zero, they must be constant. If we let:
 \begin{align*}
   E &= \frac{i\hbar}{\phi} \pd{\phi}{t} \\
-  \phi(t) &= e^{iE/ \hbar t}
+  \phi(t) &= e^{-iEt/ \hbar}
 \end{align*}
 The time independent solution is given by:
 \begin{align*}
-  -\frac{\hbar^2}{2m}\pd{^2\psi}{x^2} + V(x) \psi = E \psi\
+  -\frac{\hbar^2}{2m}\nabla^2 + V(x) \psi = E \psi\
 \end{align*}
 If we define the Hamiltonian operator $\operator{H} = -\frac{\hbar^2}{2m}
-\pd{^2}{x^2} + V$,
+\nabla^2 + V$,
 \begin{align*}
   \operator{H} \psi = E\psi
+\end{align*}
+The separated solutions can then be combined:
+\begin{align*}
+  \Psi (\ve{r}, t) = \sum_E C_E(t_0) e^{-iE(t-t_0)/\hbar} \psi_E(\ve{r})
 \end{align*}
 \end{multicols*}
 \end{document}
