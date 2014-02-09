@@ -652,60 +652,67 @@ For massless particles(such as photons):
   E=pc=\frac{hc}{\lambda}
 \end{align*}
 \subsection{4-vectors}
-A 4-vector $\fve{A}=(A_1,A_2,A_3,A_4)$ is a quantity that transforms as follows:
+A 4-vector $\fve{A}=(A_0,A_1,A_2,A_3)$ is a quantity that transforms as follows:
 \begin{align*}
-  A_1'&= \gamma(A_1+\beta A_4)\\
+  A_0'&= \gamma(A_0+\beta A_1)\\
+  A_1'&= \gamma(A_1+\beta A_0)\\
   A_2'&= A_2\\
-  A_3'&= A_3\\
-  A_4'&= \gamma(A_4+\beta A_1)
+  A_3'&= A_3
 \end{align*}
 The dot product of two 4-vectors is invariant under Lorentz transformations:
 \begin{align*}
-  \fve{A}\cdot\fve{B} &= A_1B_1 + A_2B_2 + A_3B_3 - A_4B_4\\
+  \fve{A}\cdot\fve{B} &= A_1B_1 + A_2B_2 + A_3B_3 - A_0B_0\\
   &= \fve{A'}\cdot\fve{B'}
 \end{align*}
 \subsubsection{Different 4-vectors}
 \begin{description}
   \setlength{\itemsep}{-2mm}
-\item[4-position] $(dx, dy, dz, cdt)$
+\item[4-position] $(cdt, dx, dy, dz)$
   4-vectors originate from the invariant interval $ds$.
   \begin{align*}
-    \fve{ds}^2&=(dx, dy, dz, cdt)^2 \\
+    \fve{ds}^2&=(cdt, dx, dy, dz)^2 \\
     &=dx^2+dy^2+dz^2-c^2dt^2
   \end{align*}
-\item[4-velocity] $\gamma_v(\ve{v},c)$
+\item[4-velocity] $\gamma_v(c, \ve{v})$
   To obtain other 4-vectors, we can multiply invariant quantities to the
   4-position vector, such as proper time:
   \begin{align*}
     d\tau&=\frac{dt}{\gamma}\\
     \fve{v}&=\frac{ds}{d\tau}\\
-    &=\gamma_v\left(\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt},c\right)\\
-    &=\gamma_v(\ve{v},c)
+    &=\gamma_v\left(c, \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)\\
+    &=\gamma_v(c, \ve{v})
   \end{align*}
-\item[4-momentum] $\left(\ve{p},\frac{E}{c}\right)$
+\item[4-momentum] $\left(\frac{E}{c}, \ve{p}\right)$
   As mass is invariant,
   \begin{align*}
     \fve{p}&=m\fve{v}\\
     &=(\gamma_vm\ve{v},\gamma_vmc)\\
-    &=\left(\ve{p},\frac{E}{c}\right)
+    &=\left(\frac{E}{c},\ve{p}\right)
   \end{align*}
   For photons in x-direction, the 4-momentum vector is:
   \begin{align*}
-    \fve{p}=\left(\frac{h}{\lambda},0,0,\frac{h}{\lambda}\right)
+    \fve{p}=\left(\frac{h}{\lambda},\frac{h}{\lambda},0,0\right)
   \end{align*}
-\item[4-wave] $\left(\ve{k},\frac{\omega}{c}\right)$
+\item[4-wave] $\left(\frac{\omega}{c},\ve{k}\right)$
   For electromagnetic waves,
   \begin{align*}
     k&=\frac{2\pi}{\lambda}=\frac{\omega}{c}\\
     \ve{p}&=\frac{h}{\lambda}=\hbar\ve{k}\\
     E&=hf=\hbar\omega\\
-    \fve{p}&=\hbar\left(\ve{k},\frac{\omega}{c}\right)\\
+    \fve{p}&=\hbar\left(\frac{\omega}{c},\ve{k}\right)\\
     \fve{k}&=\frac{\fve{p}}{\hbar}
   \end{align*}
-\item[4-force] $\gamma_v\left(\ve{f},\frac{1}{c}\frac{dE}{dt}\right)$
+\item[4-acceleration] $\gamma_v^4\left(va_x, a_x, \frac{a_y}{\gamma_v^2},
+    \frac{a_z}{\gamma_v^2}\right)$
+  \begin{align*}
+    \fve{a}&=\frac{d\fve{v}}{d\tau}\\
+    &=\gamma_v^4\left(va_x, a_x,\frac{a_y}{\gamma_v^2},
+      \frac{a_z}{\gamma_v^2}\right)
+  \end{align*}
+\item[4-force] $\gamma_v\left(\frac{1}{c}\frac{dE}{dt},\ve{f}\right)$
   \begin{align*}
     \fve{F}&=\frac{d\fve{p}}{d\tau}\\
-    &=\gamma_v\left(\ve{f},\frac{d}{dt}\left(\frac{E}{c}\right)\right)
+    &=\gamma_v\left(\frac{d}{dt}\frac{E}{c},\ve{f}\right)
   \end{align*}
 \end{description}
 \section{Electricity and Magnetism}
@@ -1419,6 +1426,23 @@ indistinguishable microstates $w$ inside:
 \end{align*}
 
 \section{Quantum Mechanics}
+\subsection{Blackbody Radiation}
+Ideal blackbodies have a continuous emission spectrum, with the energy density
+$\rho (\lambda, T)$ as a function of wavelength and temperature given by Plank's
+distribution:
+\begin{align*}
+  \rho (\lambda, T) = \frac{8\pi h c}{\lambda^5} \frac{1}{e^{hc/\lambda KT} - 1}
+\end{align*}
+Integrating over this distribution, we find the total emission power as a
+function of temperature:
+\begin{align*}
+  R(T) = \sigma T^4
+\end{align*}
+Where $\sigma$ is the Stefan-Boltzmann constant. Finding the wavelength with the peak emission at a given temperature, we arrive at Wien's law:
+\begin{align*}
+  \lambda_\text{max} T = b
+\end{align*}
+Where $b$ is a constant.
 \subsection{Schr\"{o}dinger's Equation}
 $\Psi(x, t)$ is a complex wave function of time and position, the
 one-dimensional Schr\"{o}dinger's equation is given by:
@@ -1457,7 +1481,7 @@ performed on many ``copies'' of the system at the same time.
 In general, the expectation value of any quantity is:
 \begin{align*}
   \ave{Q(\ve{r}, \ve{p})} = \int \cc{\Psi} Q\left(\ve{r}, -i\hbar
-    \ve{\nabla} \right) \Psi \ve{r}
+    \ve{\nabla} \right) \Psi d\ve{r}
 \end{align*}
 \subsection{Time Independent Solution}
 If $V$ is independent of time, we solve Schr\"{o}dinger's equation by separating
@@ -1490,5 +1514,28 @@ The separated solutions can then be combined:
 \begin{align*}
   \Psi (\ve{r}, t) = \sum_E C_E(t_0) e^{-iE(t-t_0)/\hbar} \psi_E(\ve{r})
 \end{align*}
+\subsubsection{Integral Form}
+If we integrate the time-independent Schr\"{o}dinger's equation about
+$\pm\epsilon$ for small $\epsilon$, the $E\psi$ term disappears and we get:
+\begin{align*}
+  \left[ \frac{d\psi}{dx} \right]^{+\epsilon}_{-\epsilon} = \frac{2m}{\hbar^2}
+  \int^{+\epsilon}_{-\epsilon} V(x) \psi(x) dx
+\end{align*}
+From this we see that the derivative of $\psi$ is continuous if $V(x)$ is
+finite.
+\subsection{Momentum Space Wavefunction}
+The position space and momentum space representations of a wavefunction can be
+interchanged with a Fourier transform:
+\begin{align*}
+  \psi (x, t) =& \\ \frac{1}{\sqrt{2\pi \hbar}}
+  &\int_{-\infty}^\infty e^{iP_xx/\hbar} \, \Phi(P_x, t) \, dP_x \\
+  \phi (P_x, t) =& \\ \frac{1}{\sqrt{2\pi \hbar}}
+  &\int_{-\infty}^\infty e^{-iP_xx/\hbar} \, \Psi(x, t) \, dx
+\end{align*}
+\subsection{1-D Examples}
+\subsubsection{Free Particle}
+\subsubsection{Infinite Well}
+\subsubsection{Finite Well}
+\subsubsection{Harmonic Oscillator}
 \end{multicols*}
 \end{document}
