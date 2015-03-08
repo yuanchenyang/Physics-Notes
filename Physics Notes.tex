@@ -59,6 +59,12 @@
   \ensuremath{\hat{\text{#1}}}}        % Operator
 \newcommand{\ave}[1]{
   \ensuremath{\langle #1 \rangle}}     % Average Value
+\newcommand{\bra}[1]{
+  \ensuremath{\langle #1 |}}           % Bra of Bra-Ket
+\newcommand{\ket}[1]{
+  \ensuremath{| #1 \rangle }}          % Ket of Bra-Ket
+\newcommand{\braket}[2]{
+  \ensuremath{\langle #1|#2 \rangle }} % Bra-Ket
 
 
 \title{Physics Notes}
@@ -1534,8 +1540,127 @@ interchanged with a Fourier transform:
 \end{align*}
 \subsection{1-D Examples}
 \subsubsection{Free Particle}
+For the free particle $V(x) = 0$. We have the general solution:
+\begin{align*}
+  \psi (x) = Ae^{ikx} + Be^{-ikx}
+\end{align*}
+After normalization, we have the following solution:
+\begin{align*}
+  \Psi (x,t) &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \phi(k)
+  e^{i \left( kx-\frac{\hbar k^2}{2m}t \right)} dk \\
+  \phi(k) &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \Psi(x, 0) e^{-ikx} dx
+\end{align*}
 \subsubsection{Infinite Well}
+For an infinite well,
+\[
+  V(x) =
+  \begin{cases}
+    0 &  |x| < a \\
+    \infty & |x| > a
+  \end{cases}
+\]
+The general solution is the same as that of the free particle, but since
+$\psi(a) = \psi(-a) = 0$, we have
+\[
+  \psi_n(x) =
+  \begin{cases}
+    \frac{1}{\sqrt{a}}\cos \left(\frac{n\pi x}{2a}\right) & n = 1,3,\cdots \\
+    \frac{1}{\sqrt{a}}\sin \left(\frac{n\pi x}{2a}\right) & n = 2,4,\cdots \\
+  \end{cases}
+\]
+The energy $E_n$ is proportional to $n^2$:
+\begin{align*}
+  E_n = \frac{\hbar^2 \pi^2 n^2}{8 m a^2}
+\end{align*}
+
 \subsubsection{Finite Well}
+For an finite well,
+\[
+V(x) =
+\begin{cases}
+  -V_0 & |x| < a \\
+  0 & |x| > a
+\end{cases}
+\]
+For $-V_0 \leq E < 0$, we have the following equations:
+\begin{align*}
+  \frac{d^2 \psi(x)}{dx^2} &+ \alpha^2 \psi(x) = 0, \\
+  \alpha &= \sqrt{\frac{2m}{\hbar^2}(V_0 - |E|)} \\
+  \frac{d^2 \psi(x)}{dx^2} &- \beta^2 \psi(x) = 0, \\
+  \beta &= \sqrt{\frac{2m|E|}{\hbar^2}}
+\end{align*}
+For $x>0$, the even solutions are:
+\[
+  \psi(x)=
+  \begin{cases}
+    A cos(\alpha x) &x \in [0, a] \\
+    C e^{-\beta x}  &x > a
+  \end{cases}
+\]
+The odd solutions are:
+\[
+\psi(x)=
+\begin{cases}
+  B sin(\alpha x) &x \in [0, a] \\
+  C e^{-\beta x}  &x > a
+\end{cases}
+\]
+After solving for boundary conditions, we get:
+\begin{align*}
+  \alpha \tan(\alpha a) &= \beta \\
+  \alpha \cot(\alpha a) &= -\beta \\
+\end{align*}
+
 \subsubsection{Harmonic Oscillator}
+For a harmonic oscillator,
+\begin{align*}
+  \operator{H} = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{m}{2}\omega^2 x^2
+\end{align*}
+Substituting $\xi = \sqrt{\frac{m\omega}{\hbar}}x$, we get solutions:
+\begin{align*}
+  \psi_n(x) &= \left( \frac{m\omega}{\pi \hbar} \right)^\frac{1}{4} H_n(\xi)
+  e^{-\xi^2/2} \frac{1}{\sqrt{2^n n!}} \\
+  E_n &= \left(n + \frac{1}{2}\right) \hbar \omega , n = 0,1,\cdots
+\end{align*}
+Where $H_n$ are the Hermite polynomials:
+\begin{alignat*}{3}
+  H_0 &= 1 && H_1 = 2\xi \\
+  H_2 &= 4\xi^2 - 2 && H_3 = 8\xi^3 - 12\xi \\
+  H_4 &= 16\xi^4 - 48\xi^2 + 12 &&
+\end{alignat*}
+
+\subsection{Linear Algebra Formalism}
+\subsubsection{Postulate 1}
+To an ensemble of physical systems, one can assign a wave/state function which contains all the information that can be known of that ensemble $\psi$. This function is in general complex. One can multiply it with an arbitary complex number without changing its physical meaning. For $N$ particles $\psi(\ve{r_1}, \ve{r_2}, \cdots, \ve{r_N})$, $\cc{\psi} \psi$ gives the probability density that \#1 is at $\ve{r_1}$, \#2 is at $\ve{r_2}$, etc. We represent the state vector as $\ket{\psi}$ and the adjoint vector as $\bra{\psi}$:
+\begin{align*}
+  \braket{\psi_1}{\psi_2} &= \int \cc{\psi_1} \psi_2 d\ve{r} = \cc{\braket{\psi_2}{\psi_1}}\\
+  \braket{\psi_1}{c\psi_2} &= c \braket{\psi_1}{\psi_2} \\
+  \braket{c\psi_1}{\psi_2} &= \cc{c} \braket{\psi_1}{\psi_2} \\
+  \braket{\psi_3}{\psi_1 + \psi_2} &= \braket{\psi_3}{\psi_1} + \braket{\psi_3}{\psi_2} \\
+  \braket{\psi}{\psi} &= 1\\
+\end{align*}
+$\psi_1$ and $\psi_2$ are orthogonal if and only if $\braket{\psi_1}{\psi_2} = 0$.
+
+\subsubsection{Postulate 2}
+The principle of superposition: if $\psi_1$ and $\psi_2$ are solutions to the Schr\"{o}dinger's equation, so is $\psi = c_1 \psi_1 + c_2 \psi_2$.
+
+\subsubsection{Postulate 3}
+Every dynamical variable is associated with a linear operator. $\mathcal{A} = A(\ve{r_1}, \cdots, \ve{r_n}, \ve{p_1}, \cdots, \ve{p_n}, t) = \operator{A}(\ve{r_1}, \cdots, \ve{r_n}, i\hbar \ve{\nabla_1}, \cdots, i\hbar \ve{\nabla_n}, t)$.
+
+\subsubsection{Postulate 4}
+The only result of a precise measurement is one of the eigenvalues of the associated linear operator $\operator{A}$:
+\begin{align*}
+  \operator{A} \psi_n = a_n \psi_n
+\end{align*}
+To have real eigenvalues, $\operator{A}$ must be Hermitian:
+\begin{align*}
+  \braket{\psi_n}{\operator{A} \psi_n} = \braket{\operator{A} \psi_n}{\psi_n} = a_n\braket{\psi_n}{\psi_n}
+\end{align*}
+
+\subsubsection{Postulate 5}
+If a system of measurements is made of the dynamical variable $A$ on an ensemble of identical systems each described by the same $\ket{\psi}$, the average value is given by:
+\begin{align*}
+  \ave{\operator{A}} = \frac{\braket{\psi}{\operator{A} \psi}}{\braket{\psi}{\psi}}
+\end{align*}
 \end{multicols*}
 \end{document}
